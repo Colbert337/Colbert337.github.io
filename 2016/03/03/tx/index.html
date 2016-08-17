@@ -90,7 +90,7 @@
     </p>
   <p class="article-time">
     <time datetime="2016-03-03T07:37:43.000Z" itemprop="datePublished">2016-03-03</time>
-    更新日期:<time datetime="2016-06-17T03:50:21.116Z" itemprop="dateModified">2016-06-17</time>
+    更新日期:<time datetime="2016-08-17T12:22:41.525Z" itemprop="dateModified">2016-08-17</time>
     
   </p>
 </header>
@@ -152,6 +152,8 @@
 <p>这里看出，ECDSA签名快验证慢，RSA是签名慢验证快。在协商环节，如果后台签名客户端验签，则后台使用ecdsa比较好。另外ECDSA256签名生成的签名串长71B，比RSA2048的256B短多了，能有效减少报文大小，减少流量消耗。</p>
 <h3 id="怎么样防重放？">怎么样防重放？</h3><p>这里先卖个关子，大家可以思考一下，要考虑通信过程中的丢包哦：）</p>
 <p>总结一下，设计可靠的通信协议，如果只考虑密码学安全是不够的，还要综合考虑性能和流量。密码学安全，在设计和实现上稍有不当，很容易踩坑，所以还是尽量使用开源的标准实现吧。本文如有错漏，请斧正。</p>
+<p>据说新的chacha20-poly1305很不错，是AEAD算法，而且在ARM架构下性能很好，实测了在TS8单核有130M/s。</p>
+<p>TEA+HMAC-SHA256：60MB/s<br>AES-GCM：400MB/s（AES-NI下700MB/s）<br>Chacha20-poly1305：130MB/s<br>测试环境：TS8-Xeon E5-2420@ 1.90GHz单核-openssl 1.0.2a /libsodium 1.0.11</p>
   
 	</div>
 		<footer class="article-footer clearfix">
