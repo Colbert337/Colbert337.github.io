@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  
+  <title><![CDATA[Colbert's blog]]></title>
+  <subtitle><![CDATA[扣吧的移动城堡]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://yoursite.com//"/>
+  <updated>2015-08-11T15:38:54.000Z</updated>
+  <id>http://yoursite.com//</id>
+  
+  <author>
+    <name><![CDATA[Colbert337]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://yoursite.com/2016/08/17/hello-world/"/>
+    <id>http://yoursite.com/2016/08/17/hello-world/</id>
+    <published>2016-08-17T08:11:11.053Z</published>
+    <updated>2015-08-11T15:38:54.000Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TCTF线上赛]]></title>
+    <link href="http://yoursite.com/2016/06/29/tctf/"/>
+    <id>http://yoursite.com/2016/06/29/tctf/</id>
+    <published>2016-06-29T07:40:03.000Z</published>
+    <updated>2016-06-29T10:08:44.976Z</updated>
+    <content type="html"><![CDATA[<p>这次TCTF线上赛为期三天，共40个队伍参赛，最后各队的分差还是有点大的。</p>
+<p><img src="/img/tctf/scoreboard.png" alt="tx"></p>
+<p>其中排第一队伍是隔壁老王，非常厉害。咱们队伍只有两人，连蒙带撞也进入了前十(<em>^__^</em>) </p>
+<p><img src="/img/tctf/score.png" alt="tx"></p>
+<p>从题目分布来看，是标准的CTF题目分类，其中逆向和web的题目比较多。</p>
+<p><img src="/img/tctf/ti.png" alt="tx"></p>
+<p>下面给大家分享几题。</p>
+<p>1.图片题，find the flag in the picture:</p>
+<p><img src="/img/tctf/stego.png" alt="tx"></p>
+<p>这题是典型的双图，跟ISG2014那题大同小异，也是利用双图中的差异来隐藏信息，只不过这题的flag藏得有点深。<br>大家可以先看下面这个解题思路，再自己尝试找出flag，提示:blue<br><a href="http://blog.sina.com.cn/s/blog_9cd8465f0102v6ok.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_9cd8465f0102v6ok.html</a></p>
+<p>2.逆向题welcome是ELF64逆向，可以用两种方法解决，一种是暴力破解，一种是优雅的数论知识，可以体会一下:</p>
+<p><a href="https://github.com/Colbert337/Colbert337.github.io/tree/master/img/tctf/welcome.tar.gz" target="_blank" rel="external">https://github.com/Colbert337/Colbert337.github.io/tree/master/img/tctf/welcome.tar.gz</a></p>
+<p>3.mobile题，提示是wormhole</p>
+<p><a href="https://github.com/Colbert337/Colbert337.github.io/tree/master/img/tctf/mobile2.rar" target="_blank" rel="external">https://github.com/Colbert337/Colbert337.github.io/tree/master/img/tctf/mobile2.rar</a></p>
+<p>4.web题array考察了一个PHP漏洞：</p>
+<p><img src="/img/tctf/php.png" alt="tx"></p>
+<p>这个漏洞信息可以参考这个博客：<br><a href="http://blog.evalbug.com/2015/11/10/different_arrays_compare_indentical_due_to_integer_key_truncation/" target="_blank" rel="external">http://blog.evalbug.com/2015/11/10/different_arrays_compare_indentical_due_to_integer_key_truncation/</a></p>
+<p>5.Hashcat考暴力破解：<br>MD5 ( “flag{X}” ) = 92b973442ff8935349c8bdba2214f06f<br>其中X是由小写字母组成的长度为8的字符串</p>
+<p>6.逆向题有一题MOV很恶心，可以感受一下：</p>
+<p><a href="https://github.com/Colbert337/Colbert337.github.io/tree/master/img/tctf/mov.tar.gz" target="_blank" rel="external">https://github.com/Colbert337/Colbert337.github.io/tree/master/img/tctf/mov.tar.gz</a></p>
+<p>在去年的recon大会中《The M/o/Vfuscator-Turning ‘mov’ into a soul-crushing RE nightmare》议题提出代码混淆的另一种方式，作者演示了所有的机器指令，除过控制流指令外，都用mov指令来实现。</p>
+<p>参考这个paper：<br><a href="http://www.cl.cam.ac.uk/~sd601/papers/mov.pdf" target="_blank" rel="external">http://www.cl.cam.ac.uk/~sd601/papers/mov.pdf</a></p>
+<p>和这个工具：<br><a href="https://github.com/xoreaxeaxeax/movfuscator" target="_blank" rel="external">https://github.com/xoreaxeaxeax/movfuscator</a></p>
+<p>其他题目还有考察选择明文攻击、溢出+shellcode+ROP、x-forward-for等，不一一列出了。</p>
+<p>CTF还是挺好玩的，大家都可以尝试去参与一下：)</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>这次TCTF线上赛为期三天，共40个队伍参赛，最后各队的分差还是有点大的。</p>
+<p><img src="/img/tctf/scoreboard.png" alt="tx"></p>
+<p>其中排第一队伍是隔壁老王，非常厉害。咱们队伍只有两人，连蒙带撞也进入了前十(<]]>
+    </summary>
+    
+      <category term="ctf" scheme="http://yoursite.com/tags/ctf/"/>
+    
+      <category term="blogs" scheme="http://yoursite.com/categories/blogs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[读书笔记-商业银行信息系统研发风险管控]]></title>
+    <link href="http://yoursite.com/2016/06/16/bank-sec/"/>
+    <id>http://yoursite.com/2016/06/16/bank-sec/</id>
+    <published>2016-06-16T11:27:10.000Z</published>
+    <updated>2016-06-17T03:32:23.396Z</updated>
+    <content type="html"><![CDATA[<p>上半年又是忙成狗了，好久没更新博客。<br>来一篇读书笔记，书名叫《商业银行信息系统研发风险管控》，有兴趣做金融风控和信息安全的同学可以一起学习。</p>
+<p>基础篇</p>
+<p>第1章 商业银行信息系统研发风险管控基础知识</p>
+<p>第2章 商业银行研发风险管控相关法规、政策和标准</p>
+<p>管理篇</p>
+<p>第3章 商业银行研发风险管控理论和模型</p>
+<p>第4章 商业银行研发风险管控体系</p>
+<pre><code>体系建设
+组织体系
+制度体系
+标准体系
+</code></pre><p>第5章 商业银行研发风险管控工作流程</p>
+<pre><code>立项
+计划
+需求
+设计
+编码
+测试
+</code></pre><p>第6章 商业银行研发风险管控工作方法</p>
+<pre><code>安全培训
+安全评审
+安全评估
+安全后评价
+</code></pre><p>第7章 商业银行研发外包风险管控</p>
+<p>第8章 商业银行研发风险管控案例</p>
+<p>技术篇</p>
+<p>第9章 信息系统安全研发策略和方法</p>
+<pre><code>安全研发策略和原则
+威胁建模
+攻击面最小化分析
+安全架构和组件
+源代码安全审核
+渗透测试
+</code></pre><p>第10章 信息系统安全研发技术</p>
+<pre><code>身份认证
+访问控制
+安全审计
+密码技术
+网络安全
+漏洞防护
+操作系统安全
+数据库系统安全
+数据安全
+其他安全技术
+</code></pre><p>待续</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>上半年又是忙成狗了，好久没更新博客。<br>来一篇读书笔记，书名叫《商业银行信息系统研发风险管控》，有兴趣做金融风控和信息安全的同学可以一起学习。</p>
+<p>基础篇</p>
+<p>第1章 商业银行信息系统研发风险管控基础知识</p>
+<p>第2章 商业银行研发风险管控相]]>
+    </summary>
+    
+      <category term="风控" scheme="http://yoursite.com/tags/%E9%A3%8E%E6%8E%A7/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[一次可靠的通信]]></title>
+    <link href="http://yoursite.com/2016/03/03/tx/"/>
+    <id>http://yoursite.com/2016/03/03/tx/</id>
+    <published>2016-03-03T07:37:43.000Z</published>
+    <updated>2016-06-17T03:50:21.116Z</updated>
+    <content type="html"><![CDATA[<p>如何设计一次可靠的通信呢？</p>
+<p>安全可靠的保障：</p>
+<ol>
+<li>对称加密以及非对称加密来解决：保密性</li>
+<li>数字签名：认证、不可抵赖</li>
+<li>单向Hash算法：完整性</li>
+</ol>
+<p><img src="/img/tx/tx.png" alt="tx"></p>
+<p>这幅图看懂了吗？</p>
+<h2 id="例子1：TLS的设计">例子1：TLS的设计</h2><p>TLS的设计目标是构建一个安全传输层（Transport Layer Security ），在基于连接的传输层（如tcp）之上提供：</p>
+<p>1.密码学安全 </p>
+<blockquote>
+<p>保密， message privacy (保密通过加密encryption实现，所有信息都加密传输，第三方无法窃听 )<br>完整性， message integrity（ 通过MAC校验机制，一旦被篡改，通信双方会立刻发现 ）<br>认证， mutual authentication （双方认证,双方都可以配备证书，防止身份被冒充 ）</p>
+</blockquote>
+<p>2.互操作，通用性 （ 根据公开的rfc，任何符合rfc的软件实现都可以互操作，不受限于任何专利技术）<br>3.可扩展性 ( 通过扩展机制 tls_ext可以添加功能，有大量的新功能，都是通过扩展添加的)<br>4.高效率 （通过session cache，恰当部署cache之后，tls的效率很高）</p>
+<p>TLS的设计和实现，可以看我同事byronhe写的一篇博文，这里不展开，请继续往下看。<br><a href="http://blog.helong.info/blog/2015/09/06/tls-protocol-analysis-and-crypto-protocol-design/" target="_blank" rel="external">http://blog.helong.info/blog/2015/09/06/tls-protocol-analysis-and-crypto-protocol-design/</a></p>
+<h2 id="例子2：某xx协议">例子2：某xx协议</h2><p>1.借鉴TLS的设计，用非对称加密算法来协商通信密钥，对称加密算法来加密通信数据<br>2.同wx的xxoo协议实现不一样，双保险，增加破解成本<br>3.关注性能，越简单越好<br>4.考虑异常情况下的处理，支持随时降级。</p>
+<p>使用优化后的ECDH+ECDSA算法来密钥协商，自研的xxx+HMAC来加解密，支持用户证书认证，防中间人和防重放。</p>
+<p>下面分享几个关键点。</p>
+<h3 id="首先，介绍一下ECDH">首先，介绍一下ECDH</h3><p>ECDH是基于ECC（Elliptic Curve Cryptosystems，椭圆曲线密码体制，参看ECC）的DH（ Diffie-Hellman）密钥交换算法。交换双方可以在不共享任何秘密的情况下协商出一个密钥。ECC是建立在基于椭圆曲线的离散对数问题上的密码体制，给定椭圆曲线上的一个点P，一个整数k，求解Q=kP很容易；给定一个点P、Q，知道Q=kP，求整数k确是一个难题。ECDH即建立在此数学难题之上。</p>
+<p>简单来说，两端生成公私钥对，然后分别把自己的公钥传输给对方，最后双方通过ECDH_compute_key这个函数计算出相同的key。</p>
+<p><img src="/img/tx/ecdh.png" alt="tx2"></p>
+<p>先看图吧，看不懂再看下面这个例子：</p>
+<blockquote>
+<p>客户端随机生成client[pri]、client[pub]<br>后台随机生成server[pri]、server[pub]<br>双方交换公钥，私钥自己保存<br>客户端key = ECDH_compute_key(client[pri]，server[pub])<br>后台key = ECDH_compute_key(server[pri]，client[pub])<br>此时双方就协商出一个相等的key了，这个key可以作为根密钥派生出对称加密密钥。</p>
+</blockquote>
+<p>采用ECDH协商，协商过程中信道只会传输密钥材料，不会传输最终的key，比传统的【A端生成RSA公私钥对，然后把公钥给B端，B端随机生成key并传输RSA(key，pub)给A，A用pri来解密获得key】的方式要安全。但ECDH不能防中间人，需要加上签名认证算法，如ECDSA来保障。</p>
+<h3 id="再介绍一个陷阱">再介绍一个陷阱</h3><p>在密码学历史上，出现过3种加密和认证的组合方式：</p>
+<blockquote>
+<p>Encrypt-and-MAC：加密后加上原串MAC<br>MAC-then-Encrypt：把（原串和原串MAC）加密<br>Encrypt-then-MAC：原串加密后，再整体MAC</p>
+</blockquote>
+<p>在TLS协议初定的那个年代，人们还没意识到这3种组合方式的安全性有什么差别，所以TLS协议规定使用 MAC-then-Encrypt，即先计算MAC，然后把 “明文+MAC” 再加密(块加密或者流加密)的方式，做流加密+MAC，和块加密+MAC。</p>
+<p>但是，悲剧的是，近些年，人们发现 MAC-then-Encrypt 这种结构导致了 很容易构造padding oracle 相关的攻击，例如这在TLS中，间接形成被攻击者利用，这间接导致了 BEAST 攻击 , Lucky 13攻击 (CVE2013-0169) 和 POODLE 攻击 (CVE2014-3566)。<br>目前因此，学术界已经一致同意： Encrypt-then-MAC才是最安全的!<br>tls使用的是 MAC-then-Encrypt的模式，导致了一些问题。具体比较，参见：<br><a href="http://cseweb.ucsd.edu/~mihir/papers/oem.pdf" target="_blank" rel="external">http://cseweb.ucsd.edu/~mihir/papers/oem.pdf</a><br><a href="https://www.iacr.org/archive/crypto2001/21390309.pdf" target="_blank" rel="external">https://www.iacr.org/archive/crypto2001/21390309.pdf</a><br><a href="http://crypto.stackexchange.com/questions/202/shouldwemacthenencryptorencryptthenmac" target="_blank" rel="external">http://crypto.stackexchange.com/questions/202/shouldwemacthenencryptorencryptthenmac</a><br><a href="https://news.ycombinator.com/item?id=4779015" target="_blank" rel="external">https://news.ycombinator.com/item?id=4779015</a><br><a href="http://tozny.com/blog/encryptingstringsinandroidletsmakebettermistakes/" target="_blank" rel="external">http://tozny.com/blog/encryptingstringsinandroidletsmakebettermistakes/</a></p>
+<p>鉴于这个陷阱如此险恶，学术界有人就提出了，干脆把Encrypt和MAC直接集成为一个算法，在算法内部解决好安全问题，不再让码农选择，避免众码农再被这个陷阱坑害，这就是AEAD（Authenticated Encryption With Addtional Data）类的算法，GCM模式就是AEAD最重要的一种。如果常用的AES-GCM。</p>
+<h3 id="然后，科普一下什么是HMAC">然后，科普一下什么是HMAC</h3><p>HMAC是密钥相关的哈希运算消息认证码（Hash-based Message Authentication Code）,HMAC运算利用哈希算法，以一个密钥和一个消息为输入，生成一个消息摘要作为输出。常用的HAMC有HMAC-MD5和HMAC-SHA。</p>
+<p>算法公式 ： HMAC（K，M）=H（K⊕opad∣H（K⊕ipad∣M））</p>
+<blockquote>
+<p>H 代表所采用的HASH算法(如SHA-256)<br>K 代表认证密码<br>Ko 代表HASH算法的密文<br>M 代表一个消息输入<br>B 代表H中所处理的块大小，这个大小是处理块大小，而不是输出hash的大小</p>
+</blockquote>
+<p>一次HMAC运算相当于计算了两次HASH。所以，一般来说，HMAC的性能是HASH算法的一半。</p>
+<h3 id="另外，还有一些坑要注意：">另外，还有一些坑要注意：</h3><blockquote>
+<p>正确的签名方式是，经过密码学HASH后，对HASH结果进行签名，这样的实现能保证签名有效性。<br>算法实现应该使用开源密码学库，不要自己搞<br>CBC操作模式的iv一定要通过随机数生成器生成</p>
+</blockquote>
+<h3 id="最后给出一些算法的性能">最后给出一些算法的性能</h3><p>在E5-2420@1.90GHz单核下使用openssl 1.0.2a测试:</p>
+<blockquote>
+<p>ecdsa_sign—_256： 1.2w次/s（签名串71B）<br>ecdsa_verify_256：5100次/s<br>RSA2048_sign：545.3次/s（签名串256B）<br>RSA2048_verify：1.8w次/s<br>ECDH_compute_key_256: 7100次/s（32B）</p>
+</blockquote>
+<p>这里看出，ECDSA签名快验证慢，RSA是签名慢验证快。在协商环节，如果后台签名客户端验签，则后台使用ecdsa比较好。另外ECDSA256签名生成的签名串长71B，比RSA2048的256B短多了，能有效减少报文大小，减少流量消耗。</p>
+<h3 id="怎么样防重放？">怎么样防重放？</h3><p>这里先卖个关子，大家可以思考一下，要考虑通信过程中的丢包哦：）</p>
+<p>总结一下，设计可靠的通信协议，如果只考虑密码学安全是不够的，还要综合考虑性能和流量。密码学安全，在设计和实现上稍有不当，很容易踩坑，所以还是尽量使用开源的标准实现吧。本文如有错漏，请斧正。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>如何设计一次可靠的通信呢？</p>
+<p>安全可靠的保障：</p>
+<ol>
+<li>对称加密以及非对称加密来解决：保密性</li>
+<li>数字签名：认证、不可抵赖</li>
+<li>单向Hash算法：完整性</li>
+</ol>
+<p><img src="/img/tx]]>
+    </summary>
+    
+      <category term="安全笔记" scheme="http://yoursite.com/tags/%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[独家首发-支付宝吱口令的秘密]]></title>
+    <link href="http://yoursite.com/2016/02/07/zhicode/"/>
+    <id>http://yoursite.com/2016/02/07/zhicode/</id>
+    <published>2016-02-07T02:47:48.000Z</published>
+    <updated>2016-02-10T03:48:59.580Z</updated>
+    <content type="html"><![CDATA[<p>扣吧先给大家拜年了！祝大家猴年大吉，身体健康，万事如意！</p>
+<p>OK，正文开始。<strong>以下内容仅做学习和交流，请勿转载，请勿做其他用途</strong></p>
+<p>春节前的一阵子是不是被吱口令搞烦了？</p>
+<p>如下图:</p>
+<p><img src="/img/zhi/zhicode.png" alt="zhicode"></p>
+<p>吱口令如下：</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#吱,口,令#复制这条消息，打开你的支付寳即可添加我为朋友WcvLnp650c</span></span><br></pre></td></tr></table></figure>
+<p>我们来分析一下吱口令的逻辑，在com.alipay.android.phone.wallet.sharetoken下有后台服务ShareTokenService，是吱口令的核心逻辑。</p>
+<p>这个后台服务对外提供4个API，分别是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">checkToken</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> String <span class="title">getVerifiedToken</span><span class="params">(String arg1)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">shareToken</span><span class="params">(String arg1, String arg2, String arg3, String arg4)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">shareToken</span><span class="params">(String arg1, String arg2, String arg3, String arg4, ShareTokenService$ShareTokenChannel</span></span></span><br></pre></td></tr></table></figure>
+<p>其中checkToken用于检测token，而shareToken用于分享token。我们分别对其进行分析。</p>
+<h1 id="检测token的逻辑">检测token的逻辑</h1><p>当页面状态变化时，会拉起ShareTokenCheckReceiver，这个Receiver会调用ShareTokenService的checkToken()，执行以下逻辑：</p>
+<blockquote>
+<p>1)从系统剪切板中读取内容<br>2)从内容中提取token，用的是CRC32算法<br>3)检测当前MD5（UserId）是否和xml中的一致<br>4)把token和客户端数据组装成JSON串，发送到服务器端做校验<br>5)拉取数据，启动ToeknDecodeActivity页面</p>
+</blockquote>
+<p>第二步中的从内容中提取token，token的长度默认是8位，判断逻辑是这样的：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果字符串最后<span class="number">2</span>位等于字符串前<span class="number">8</span>位的CRC32，则前<span class="number">8</span>位就是token，后<span class="number">2</span>位是校验位</span><br></pre></td></tr></table></figure></p>
+<p>所以，<strong>无论吱口令的【token+校验位】前面或者后面添加多少奇葩字符，都不会影响吱口令的识别，除非支付宝升级客户端把checkToken的逻辑换掉</strong></p>
+<p>举个例子：<br><code>扌考贝这个 xiao xi，打開知-fu&amp;宝，</code><br><code>送我富强福7ptkyKacrmv794M，</code><br><code>算出来token=Kacrmv79，校验位=4M</code></p>
+<p>有兴趣的同学可以写个APP读取剪切板数据，提取token，精准识别吱口令：）</p>
+<h1 id="分享token的逻辑">分享token的逻辑</h1><p>入口A，用于添加好友：</p>
+<p>在GenerateZhiCodeActivity会通过RpcService调用ZhiCodeRpc.getZhiCode()到服务器端获取token，随后调用ShareTokenService的shareToken，携带参数启动SendSharedTokenActivity页面</p>
+<p>入口B，用于邀请朋友赐福：<br>ShareFactoryPresenter会调用blessingRpcService.genCode到服务器端获取token，随后调用ShareTokenService的shareToken，携带参数启动SendSharedTokenActivity页面</p>
+<p>另外，支付宝传输协议使用的是protobuf，把远程调用封装了一层proxy，叫RpcService，客户端通过以下方式，可以便捷的调用服务器端CGI。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(RpcService)context.<span class="function"><span class="title">getRpcProxy</span><span class="params">(xxxRpc.class)</span></span>.<span class="function"><span class="title">xxxmethod</span><span class="params">(arg)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>吱口令的分析到此为止，欢迎留言交流。有空再更一篇“支付宝咻一咻的秘密”:)</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>扣吧先给大家拜年了！祝大家猴年大吉，身体健康，万事如意！</p>
+<p>OK，正文开始。<strong>以下内容仅做学习和交流，请勿转载，请勿做其他用途</strong></p>
+<p>春节前的一阵子是不是被吱口令搞烦了？</p>
+<p>如下图:</p>
+<p><img s]]>
+    </summary>
+    
+      <category term="业务分析" scheme="http://yoursite.com/tags/%E4%B8%9A%E5%8A%A1%E5%88%86%E6%9E%90/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[农民斗地主——Binder fuzz安全研究]]></title>
+    <link href="http://yoursite.com/2016/01/25/binder-fuzz/"/>
+    <id>http://yoursite.com/2016/01/25/binder-fuzz/</id>
+    <published>2016-01-25T15:45:23.000Z</published>
+    <updated>2016-01-30T04:43:13.582Z</updated>
+    <content type="html"><![CDATA[<p>扣吧力作，欢迎转载，转载请注明来自colbert337.github.io</p>
+<p>最近扣吧忙成狗了，好久没更新博客，对不住大家了，今天趁天气暖和点，来一篇干货。</p>
+<p>由于好久没搞Android了，写得不专业的地方，请见谅哈。</p>
+<h1 id="0-为什么要研究Binder_fuzz">0.为什么要研究Binder fuzz</h1><p>以目前最热门的指纹方案为例。</p>
+<p><img src="/img/binderfuzz/soter.png" alt="soter"></p>
+<blockquote>
+<p>TZ：Trustzone(请自行百度)<br>CA：Trustzone框架中的Clinet App<br>TA：Trustzone框架中的Trustzone APP</p>
+</blockquote>
+<p>上层APP通过Binder机制调用keystore和FingerprintService两个底层系统服务，来获取密钥存储和指纹的能力。底层服务再通过CA跟TZ驱动通信，调用TZ中TA提供的服务，如指纹识别等安全性要求较高的服务。</p>
+<p>我们今天只看Android侧的Binder体系。</p>
+<p>Binder其实是提供了一种进程间通信（IPC）的功能。这些系统服务，通过binder协议抽象出一个个的“接口”，供其他进程调用，是一个重要的潜在的攻击面。如果没有做好权限控制，会让低权限的第三方应用/病毒/木马利用，后果不堪设想。</p>
+<p>其次，做Android的同学都知道，Binder是android一个非常重要的机制，夸张一点可以说是“Android的灵魂”，非常有必要进行细致的分析和漏洞挖掘。</p>
+<p>插播一个扣吧总结的知识点，系统服务的分类</p>
+<blockquote>
+<p>1.Binder体系的java服务(有Stub接口，也就是AIDL封装)<br>2.Binder体系的Native服务<br>3.socket体系的init服务（通常见于init.rc）<br>4.其他服务</p>
+</blockquote>
+<p>OK，再谈谈为什么使用fuzz技术呢？</p>
+<p>总的来说，是因为fuzz在协议和接口安全测试中比较简单粗暴，试错成本低。所以，“不管什么接口，先fuzz一把看看”。</p>
+<p>Fuzzing是一种基于缺陷注入的自动软件测试技术。通过编写fuzzer工具向目标程序提供某种形式的输入并观察其响应来发现问题，这种输入可以是完全随机的或精心构造的。Fuzzing测试通常以大小相关的部分、字符串、标志字符串开始或结束的二进制块等为重点，使用边界值附近的值对目标进行测试。</p>
+<p>主要有两种类型的fuzzing技术 ：</p>
+<p>1）dumb fuzzing 这种测试无需了解协议或文件本身格式，通过提供完全随机的输入或简单改变某些字节去发现问题。这种方法实现起来较简单，容易快速触发错误，但它的完全随机性会导致产生大量无效的输入或格式。</p>
+<p>2）Intelligent fuzzing 研究目标应用程序的协议或文件格式、功能配置，了解各类漏洞的成因，有目的地编写fuzzer。编写有效的fuzzer需要花费时间，但能够对某些感兴趣的部分集中测试，因此更有效。</p>
+<h1 id="1-什么是Binder(有基础的可以略过这一部分)">1.什么是Binder(有基础的可以略过这一部分)</h1><p>Android系统采用Binder机制作为进程间通信机制，类似于COM和CORBA分布式组件架构，通俗来讲其实就是提供远程过程调用（RPC）功能。</p>
+<p>在Binder机制中，由Client、Server、ServiceManger、Binder驱动这四个部分组成，其中Client、Server、ServiceManager运行在用户空间，Binder驱动运行在内核空间。Binder就是把这四个组件粘合在一起的粘合剂，核心组件是Binder驱动，ServiceManager提供了辅助管理的功能。Client和Server正是在Binder驱动和ServiceManager提供的基础设施上，进行CS通信。</p>
+<p><img src="/img/binderfuzz/binderipc.png" alt="binderipc"></p>
+<p>下面这个流程图可以简单说明Client通过binder调用Server的一个过程，Client会通过Proxy（这里的Proxy不是单一实体，实际上是一系列的BpInterface、BpBinder等代理组件）去跟binder驱动通信，Proxy把数据打包成parcel类型数据再进行传输。</p>
+<p><img src="/img/binderfuzz/binderproxy.png" alt="binderproxy"></p>
+<p>那么数据具体是怎么传输的呢？</p>
+<p>我们继续深究一下，笔者总结了一个比较全的图。Java层服务其实也是在Native层服务BpBinder和BBinder的一个封装。如果屏蔽底层驱动来看，整个Binder代理的核心就是BpBinder和BBinder。</p>
+<p><img src="/img/binderfuzz/binderall.png" alt="binderall"></p>
+<p>其中，BpBinder最重要的职责就是实现跨进程传输的传输机制，至于具体传输的是什么语义，它并不关心。我们观察它的transact()函数的参数，可以看到所有的语义都被打包成Parcel类型数据。（Parcel是轻量级的高效的对象序列化和反序列化机制，Android在Java空间和C++都实现了Parcel，由于它在C/C++中，直接使用了内存来读取数据，因此，它更有效率）</p>
+<p>请记住这个伟大的函数——transact()</p>
+<p><img src="/img/binderfuzz/transact.png" alt="transact"></p>
+<p>举一个例子：上层APP调用MediaRecorder对外提供的API，名字叫setCamera，实际上是执行了BpMediaRecorder中的setCamera方法中，remote()返回的就是BpBinder对象，这里会组装好parcel数据包，会传给BpBinder的transact函数。transact函数就会把数据发给对端，也就是另一个BBinder对象。</p>
+<p><img src="/img/binderfuzz/setCamera.png" alt="setCamera"></p>
+<p>我们看一下具体是如何发送数据？</p>
+<p>BpBinder的transact函数，通过层层调用，最终通过ioctl和binder驱动通信</p>
+<p><img src="/img/binderfuzz/binderioctl.png" alt="binderioctl"></p>
+<p>嗯，上述的就是发送请求的过程。</p>
+<p>下面来看接收方，Binder远程通信的目标端实体必须继承于BBinder类，该类和BpBinder相对，主要关心的只是传输方面的东西，不太关心所传输的语义。当收到回复后，会执行IPCTHreadState::waitForRespaonse函数的逻辑，并执行executeCommand(cmd)</p>
+<p><img src="/img/binderfuzz/executeCommand.png" alt="executeCommand"></p>
+<p>executeCommand中，会取得一个合法的BBinder对象，并执行BBinder的transact函数。<br>（是不是有点奇怪，BBinder也有一个transact函数，请继续往下看吧）</p>
+<p><img src="/img/binderfuzz/BBinder.png" alt="BBinder"></p>
+<p>BBinder::transact中会调用onTransact，这个onTransact才是真正处理业务的。需要注意的是，因为我们的binder实体在本质上都是继承于BBinder的，而且我们一般都会重载onTransact()函数，所以上面的onTransact()实际上调用的是具体binder实体的onTransact()成员函数。也就是说，onTransact的具体实现一般在上层的binder实体，而不在BBinder。</p>
+<p><img src="/img/binderfuzz/onTransact.png" alt="onTransact"></p>
+<p>上面说了，BBinder没有实现一个默认的onTransact()成员函数，所以在远程通信时，BBinder::transact()调用的onTransact()其实是Bnxxx或者BnInterface的某个子类的onTransact()成员函数，举个例子，BnMediaRecorder中实现了一个onTransact函数，通过switch-case，根据不同code进行分发处理。</p>
+<p><img src="/img/binderfuzz/BnMediaRecorder.png" alt="BnMediaRecorder"></p>
+<p>switch（code）中的code，其实就是前面说的BpBinder中transact函数传过来的int型的方法号。</p>
+<h1 id="2-Binder_fuzz怎么作">2.Binder fuzz怎么作</h1><p>经过上面的分析，我们已经对Binder有个全局的了解。fuzz的关键是选择好fuzz的目标和fuzz切入点（接口），那么应该如何选择呢？</p>
+<p>思路就是农民斗地主！</p>
+<p>前面也说了，系统服务（地主）具有高权限，是我们需要重点关注的对象，而低权限进程（农民）可以利用binder call去调用系统服务，从低权限到高权限，存在一个跨安全域的数据流，这里就是一个典型的攻击界面。所以，我们选择系统服务作为fuzz的目标。</p>
+<p><img src="/img/binderfuzz/binderfuzz1.png" alt="binderfuzz1"></p>
+<p>那么Fuzz接口呢？选择fuzz接口需要满足这几个要求：</p>
+<blockquote>
+<p>1）这个接口是开放的，是可以被低权限进程调用的<br>2）这个接口距离fuzz目标（系统服务）比较接近，中间路径最好透传，这样比较容易分析异常<br>3）从简原则</p>
+</blockquote>
+<p>根据上面的分析，BpBinder中的transact函数就是一个很好的fuzz接口，但这货在底层无法直接调用。</p>
+<p>怎么办呢？</p>
+<p>我们从BpBinder往上层找，很容易发现，Java层IBinder的transact函数最终调用到BpBinder，且参数是原封不动的“透传”到底层，考虑到java层的可视化和扩展性，我决定选择IBinder的公有方法transact作为fuzz接口。</p>
+<p>下图就是这个接口的定义：</p>
+<p><img src="/img/binderfuzz/fuzzapi.png" alt="fuzzapi"></p>
+<p>请大家认真看看上图注释的说明：</p>
+<blockquote>
+<p>code是int类型，指定了服务方法号<br>data是parcel类型，是发送的数据，满足binder协议规则，下面会有详述<br>reply也是parcel类型，是通信结束后返回的数据<br>flag是标记位，0为普通RPC，需要等待，调用发起后处于阻塞状态直到接收到返回，1为one-way RPC，表示“不需要等待回复的”事务，一般为无返回值的单向调用。</p>
+</blockquote>
+<p>下面开始讲重点了，额。</p>
+<p>接口不是你想fuzz就能fuzz。我们来解决几个关键问题：</p>
+<h2 id="1）如何取得服务的IBinder对象？">1）如何取得服务的IBinder对象？</h2><p>我们要取到对端的IBinder对象，才可以调用这个服务。系统其实有一些隐藏API可以利用。先通过反射出ServiceManager（hide属性）中的listServices获取所有运行的服务名称：</p>
+<p><img src="/img/binderfuzz/listService.png" alt="listService"></p>
+<p>获取到String类型的服务名称后，再反射getService获取对应的服务IBinder对象：</p>
+<p><img src="/img/binderfuzz/getService.png" alt="getService"></p>
+<p>是不是很犀利，其实是借用了上文说的ServiceManager的强大力量。</p>
+<h2 id="2）code如何生成？">2）code如何生成？</h2><p>code也称为TransactionID，标定了服务端方法号。</p>
+<p>每个服务对外定义的方法都会分配方法号，而且是有规律的，第一个服务方法code使用1，第二个是2，，第三个使用3，依次类推，如果有N个方法，就分别分配1-N个连续的服务号。</p>
+<p>有个小技巧，对于Java服务，必定有Stub类，可以通过反射出mInterfaceToken+”$Stub”类中所有成员属性，其中以”TRANSACTION_”开头的int型就是该方法对应的。</p>
+<p>如下图的例子，服务端greet方法对应的code就是TRANSACTION_greet：</p>
+<p><img src="/img/binderfuzz/aidlexample.png" alt="aidlexample"></p>
+<p>如果是Native服务，就比较悲剧了，目前还没有好的自动化方法直接获取code。一般服务方法数不会太多，所以确定一个上限如50，从1到50循环生成code就可以把所有方法遍历。当然可以通过人工逆向分析出code，但这样成本比较高。</p>
+<h2 id="3）data如何构造？">3）data如何构造？</h2><p>通过大量的源码review和分析得知，data由“RPC header+参数1+参数2+….”来构成的。</p>
+<p>举个例子，如下图，setDataSource这个API，首先调用data.writeInterfaceToken会写入一个RPC header，然后会依次写入调用方法的参数，比如setdataSource有3个参数，这里就会依次写入三个数据：</p>
+<p><img src="/img/binderfuzz/setDataSource.png" alt="setDataSource"></p>
+<p>是不是很有规律！！</p>
+<p>通过review writeInterfaceToken的实现，我们可以发现这个RPC header是由一个int型数据加上String类型的interface name来构成。</p>
+<p><img src="/img/binderfuzz/writeInterfaceToken.png" alt="writeInterfaceToken"></p>
+<p>但我们不需要自己去构造RPC header，直接调用writeInterfaceToken函数，传入interface name就可以了。最后抽象出来的parcel类型的data应该是这样的：</p>
+<p><img src="/img/binderfuzz/RPCheader.png" alt="RPCheader"></p>
+<p>那大家可能会问interface name是什么东西，如何获取？很简单，interface name是接口名称，只要取得IBinder对象，就可以直接getInterfaceDescriptor来获取interface name，也就是接口方法的描述符。</p>
+<p><img src="/img/binderfuzz/getInterfaceDescriptor.png" alt="getInterfaceDescriptor"></p>
+<p>再看如何获取一个方法的参数和类型呢？</p>
+<p>对于Java层服务的方法，可以通过反射获取method对象，然后用getParameterTypes获取所有的类型：</p>
+<p><img src="/img/binderfuzz/methodtpye.png" alt="methodtpye"></p>
+<p>对于native层服务，无法直接获取方法参数类型，可以用过review调用者实现和反编译分析等方法来作。</p>
+<h2 id="4）fuzz系统和逻辑怎么设计？">4）fuzz系统和逻辑怎么设计？</h2><p>直接上图吧。如下图，整个fuzz系统分为4个模块,分别是数据产生器，fuzz引擎，监视器和日志模块。</p>
+<p>1）数据产生器就是用上述方法产生transact需要用到的数据</p>
+<p>2）fuzz引擎用于执行具体的transact过程</p>
+<p>3）监视器用于监控fuzz结果和异常</p>
+<p>4）日志模块用于记录fuzz结果</p>
+<p><img src="/img/binderfuzz/fuzz.png" alt="fuzz"></p>
+<p>这里笔者采用了3种fuzz方法</p>
+<p>1）dumb fuzz：构造好RPC header后，直接塞入大量随机数据，code范围为1-100，比较暴力。</p>
+<p>2）intelligent fuzz：构造好RPC header后，精准识别出code，并根据不同的code构造出类型正确的随机参数</p>
+<p>3）simple fuzz：构造好RPC header后，精准识别出code，但每次请求只写入int类型“0”，通过返回值，快速识别fuzz目标的接口是否有权限校验</p>
+<h2 id="5）如何判断fuzz结果和识别安全漏洞？">5）如何判断fuzz结果和识别安全漏洞？</h2><p>一般来说，要做到“权限判断+数据有效性判断”两层防护才是安全的。</p>
+<p>通过监控transact的返回值和系统log和系统状态，可以看到的fuzz现象主要有以下几种：</p>
+<p>1）有SecurityException，则说明该接口有进行权限判断，做了一层防护</p>
+<p>2）无Exception，说明该接口没有进行权限校验，默认对外暴露，是不安全的，可以深挖</p>
+<p>3）异常现象，如系统重启、指纹服务挂死、屏幕无响应等，说明该接口不仅没有进行权限判断，而且fuzz数据导致了缓存区溢出/进程crash等异常，这类现象要再去进行人工分析，很有可能会严重的提权漏洞（比如root）</p>
+<p>举个例子，看看到底是哪里出现安全漏洞。下图，ontransact函数中switch-case结构里，其中一个case中没有对数据进行判断就读到*device_address，而这个指针直接当成参数直接使用，当指针地址异常就会引起系统服务进程crash，从而导致系统重启，是一个典型的拒绝服务漏洞。也就是说，任意一个低权限的进程可以随时进行攻击，导致系统重启。</p>
+<p><img src="/img/binderfuzz/cve.png" alt="cve"></p>
+<p>再举个例子，假设某手机厂家的系统指纹服务有个接口叫DeleteFingerPrint()，用于删除用户指纹，该服务的实现没有进行权限判断和参数校验，恶意攻击者就有可能构造参数，非法调用该服务的方法，把用户的指纹信息删除。</p>
+<p>重要的事情要说三遍！</p>
+<p>参数要做检查</p>
+<p>参数要做检查</p>
+<p>参数要做检查</p>
+<p>今天先写到这里，写得有点乱，后续再更新一下。如果你喜欢扣吧的文章，请多多留言支持~</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>扣吧力作，欢迎转载，转载请注明来自colbert337.github.io</p>
+<p>最近扣吧忙成狗了，好久没更新博客，对不住大家了，今天趁天气暖和点，来一篇干货。</p>
+<p>由于好久没搞Android了，写得不专业的地方，请见谅哈。</p>
+<h1 id="0-为]]>
+    </summary>
+    
+      <category term="Android安全" scheme="http://yoursite.com/tags/Android%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[raspberry(树莓派)WIFI钓鱼攻略]]></title>
+    <link href="http://yoursite.com/2015/10/22/raspberry/"/>
+    <id>http://yoursite.com/2015/10/22/raspberry/</id>
+    <published>2015-10-22T15:43:10.000Z</published>
+    <updated>2015-11-28T05:02:05.165Z</updated>
+    <content type="html"><![CDATA[<h3 id="先看看钓鱼页面的效果">先看看钓鱼页面的效果</h3><p>如何，是不是以假乱真？</p>
+<p><img src="/img/raspberry/rap_wifi.png" alt="rap_wifi"></p>
+<blockquote>
+<p>千万不要拿来做坏事！<br>千万不要拿来做坏事！<br>千万不要拿来做坏事！</p>
+</blockquote>
+<p>恩，重要的事情要说三遍</p>
+<h3 id="关于树莓派2B">关于树莓派2B</h3><p>Raspberry Pi(中文名为“树莓派”,简写为RPi，或者RasPi/RPi)是为学生计算机编程教育而设计，只有信用卡大小的卡片式电脑，其系统基于Linux。自问世以来，受众多计算机发烧友和创客的追捧，曾经一“派”难求。别看其外表“娇小”，内“心”却很强大，视频、音频等功能通通皆有，可谓是“麻雀虽小，五脏俱全”。</p>
+<p><img src="/img/raspberry/rap.png" alt="rap"></p>
+<p>笔者手上的树莓派2代B型，配置如下：</p>
+<blockquote>
+<p>900MHz四核ARM Cortex-A7 CPU<br>1GB的RAM<br>4个USB端口<br>40个GPIO引脚<br>完整的HDMI端口<br>以太网端口<br>3.5mm音频 jack和复合视频  //他俩是一个各接口，不太了解此接口，姑且这么写了。<br>相机接口（CSI）<br>显示接口（DSI）<br>微型SD卡插槽<br>videocoreIV 3D图形核心</p>
+</blockquote>
+<h3 id="选择系统">选择系统</h3><p>笔者安装的系统是树莓派官方出的Raspbian，基于Debian并根据树莓派的硬件进行了优化。当然，炫酷的你也可以安装kali，更适合渗透。</p>
+<h3 id="安装相关软件">安装相关软件</h3><p>1.安装xrdp，就可以在windows下使用mstsc命令远程桌面控制树莓派<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install xrdp</span><br></pre></td></tr></table></figure></p>
+<p>输入密码：<br><img src="/img/raspberry/rap_login.png" alt="rap_login"></p>
+<p>这就是树莓派的图形化界面：<br><img src="/img/raspberry/rap_desktop.png" alt="rap_desktop"></p>
+<p>2.树莓派默认的编辑器比较怪异，用起来很不习惯，但是处理起来很简单</p>
+<p>首先删除默认的vi编辑器<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="built_in">remove</span> <span class="keyword">vim</span>-common</span><br></pre></td></tr></table></figure></p>
+<p>然后重新安装vim<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> install <span class="keyword">vim</span></span><br></pre></td></tr></table></figure></p>
+<p>安装好之后就可以使用vi或者vim进行编辑操作，但是没有代码高亮显示。<br>在~目录下面新建.vimrc文件可以实现<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">cd</span> <span class="regexp">~</span><br><span class="line">sudo</span> vim .vimrc</span><br></pre></td></tr></table></figure></p>
+<p>在.vimrc中添加一下配置，就OK了：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">nu</span></span><br><span class="line"><span class="keyword">syntax</span> <span class="keyword">on</span></span><br><span class="line"><span class="keyword">set</span> tabstop=<span class="number">4</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="更新系统">更新系统</h3><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> upgrade</span><br></pre></td></tr></table></figure>
+<h3 id="选择合适的无线网卡和TF卡">选择合适的无线网卡和TF卡</h3><p>要选用合适的USB Wifi无线网卡。淘宝上最容易的买到的适合树莓派的USB无线网卡为EDUP的EP-N8508GS，该款USB无线网卡的芯片为REALTEK 8188。在raspbian系统提供的默认驱动中，REALTEK 8188并不能直接工作于Wifi AP模式。</p>
+<p><img src="/img/raspberry/8515.png" alt="8515"></p>
+<p>为了能在树莓派raspbian系统中使用wifi AP模式，可购买网卡芯片为RT5370或RT5372的USB wifi网卡，例如SL-1506N。笔者手上刚好有一个360随身WIFI 1代，芯片就是RT5370。</p>
+<p><img src="/img/raspberry/360wifi.png" alt="360wifi"></p>
+<p>我们把USB Wifi插入树莓派的USB端口，远程登录树莓派。</p>
+<p>【使用lsusb命令】<br>若USB wifi插入正确，可查看到RT5370相关信息。<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> lsusb</span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/raspberry/lsusb.png" alt="lsusb"></p>
+<p>【安装iw工具】<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install iw</span><br></pre></td></tr></table></figure></p>
+<p>【使用iw命令查看无线功能列表】<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo iw <span class="type">list</span></span><br></pre></td></tr></table></figure></p>
+<p>如果使用RT5370网卡可获得较多的信息;如果使用RTL8188网卡，那么iw list命令只输出“nl80211 not found”，说明该系统中RTL8188并不支持AP模式。</p>
+<p><img src="/img/raspberry/iw.png" alt="iw"></p>
+<h3 id="安装hostapd">安装hostapd</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install hostapd</span><br></pre></td></tr></table></figure>
+<p>未完待续</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="先看看钓鱼页面的效果">先看看钓鱼页面的效果</h3><p>如何，是不是以假乱真？</p>
+<p><img src="/img/raspberry/rap_wifi.png" alt="rap_wifi"></p>
+<blockquote>
+<p>千万不要拿来做坏]]>
+    </summary>
+    
+      <category term="树莓派" scheme="http://yoursite.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[使用python-urllib2发送POST报文]]></title>
+    <link href="http://yoursite.com/2015/09/16/python-post/"/>
+    <id>http://yoursite.com/2015/09/16/python-post/</id>
+    <published>2015-09-16T14:12:42.000Z</published>
+    <updated>2015-11-28T05:11:53.567Z</updated>
+    <content type="html"><![CDATA[<p>用于CGI接口测试，python 2.7.1亲测有效</p>
+<p>talk is cheap , show me the code</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="comment">#fix urllib2.URLError: &lt;urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificat590)&gt;</span></span><br><span class="line"><span class="keyword">import</span> ssl</span><br><span class="line">ssl._create_default_https_context = ssl._create_unverified_context</span><br><span class="line"></span><br><span class="line">url = <span class="string">"https://api.mch.weixin.qq.com/papay/test"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">"url = "</span> + url</span><br><span class="line"></span><br><span class="line">test_data1 = <span class="string">"&lt;?xml version='1.0' standalone=no&gt;&lt;!- Our to do list data -&gt;&lt;xml&gt;&lt;test&gt;"</span></span><br><span class="line">test_data2 = <span class="string">"a"</span></span><br><span class="line">test_data3 = <span class="string">"&lt;/test&gt;&lt;/xml&gt;"</span></span><br><span class="line"></span><br><span class="line">data = test_data1 + test_data2 *<span class="number">7</span> + test_data3</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> len(data) &gt; <span class="number">20</span>:</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"data = "</span> + data[<span class="number">0</span>:<span class="number">20</span>]+<span class="string">"..."</span>+data[len(data)-<span class="number">20</span>:]</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"data = "</span> + data</span><br><span class="line"><span class="comment">#post</span></span><br><span class="line">req = urllib2.Request(url = url,data =data)</span><br><span class="line"></span><br><span class="line">res_data = urllib2.urlopen(req)</span><br><span class="line">res = res_data.read()</span><br><span class="line"><span class="keyword">print</span> <span class="string">"response = "</span></span><br><span class="line"><span class="keyword">print</span> res</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<p>用于CGI接口测试，python 2.7.1亲测有效</p>
+<p>talk is cheap , show me the code</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pr]]>
+    </summary>
+    
+      <category term="小工具" scheme="http://yoursite.com/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[微信后台架构学习笔记(持续更新)]]></title>
+    <link href="http://yoursite.com/2015/08/31/wx1/"/>
+    <id>http://yoursite.com/2015/08/31/wx1/</id>
+    <published>2015-08-31T15:42:49.000Z</published>
+    <updated>2015-09-05T13:56:46.000Z</updated>
+    <content type="html"><![CDATA[<p>微信后台主要分三层，分别是接入层、逻辑层、存储层</p>
+<p><img src="/img/wx/wxhtkj.png" alt="wxhtkj"></p>
+<p>三层框架：Proxy+CGI+后台模块<br>微服务架构：RPC框架+高扇出</p>
+<p>RPC框架：InQueue+OutQueue+Worker</p>
+<p><img src="/img/wx/rpc_wx.png" alt="rpc_wx"></p>
+<p>RPC是指远程过程调用，也就是说两台服务器A，B，一个应用部署在A服务器上，想要调用B服务器上应用提供的函数/方法，由于不在一个内存空间，不能直接调用，需要通过网络来表达调用的语义和传达调用的数据。</p>
+<p>比如说，一个方法可能是这样定义的：<br>Employee getEmployeeByName(String fullName)</p>
+<p>那么：<br>1.首先要解决寻址的问题，也就是说，A服务器上的应用怎么告诉底层的RPC框架，B服务器的IP，以及应用绑定的端口，还有方法的名称，这样才能完成调用<br>2.方法的参数需要通过底层的网络协议如TCP传递到B服务器，由于网络协议是基于二进制的，内存中的参数的值要序列化成二进制的形式<br>3.在B服务器上完成寻址后，需要对参数进行反序列化，恢复为内存中的表达方式，然后找到对应的方法进行本地调用，然后得到返回值，<br>4.返回值还要发送回服务器A上的应用，也要经过序列化的方式发送，服务器A接到后，再反序列化，恢复为内存中的表达方式，交给应用</p>
+<p><img src="/img/wx/rpc.png" alt="rpc"></p>
+<p>为什么RPC呢？就是无法在一个进程内，甚至一个计算机内通过本地调用的方式完成的需求，比如比如不同的系统间的通讯，甚至不同的组织间的通讯。由于计算能力需要横向扩展，需要在多台机器组成的集群上部署应用，</p>
+<p>RPC的协议有很多，比如最早的CORBA，Java RMI，Web Service的RPC风格，Hessian，Thrift，甚至Rest API。</p>
+<p>(未完待续)</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>微信后台主要分三层，分别是接入层、逻辑层、存储层</p>
+<p><img src="/img/wx/wxhtkj.png" alt="wxhtkj"></p>
+<p>三层框架：Proxy+CGI+后台模块<br>微服务架构：RPC框架+高扇出</p>
+<p>RPC框架：In]]>
+    </summary>
+    
+      <category term="微信后台" scheme="http://yoursite.com/tags/%E5%BE%AE%E4%BF%A1%E5%90%8E%E5%8F%B0/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Android Attack Surface(持续更新)]]></title>
+    <link href="http://yoursite.com/2015/08/24/android-attack-surface/"/>
+    <id>http://yoursite.com/2015/08/24/android-attack-surface/</id>
+    <published>2015-08-24T14:10:44.000Z</published>
+    <updated>2015-08-30T11:54:52.000Z</updated>
+    <content type="html"><![CDATA[<p>Android系统有哪些攻击面呢？如何指导我们做好Android安全？</p>
+<p>先上一幅总图：</p>
+<p><img src="/img/and_attack_surface/attack_surface.png" alt="attack_surface"></p>
+<h2 id="1-Remote_Attack_Surface(远程攻击面)">1.Remote Attack Surface(远程攻击面)</h2><p>最巨大的、最危险的、最有吸引力的攻击界面，攻击者无需本地物理接触受害者</p>
+<h3 id="Networking_Stacks(网络协议)">Networking Stacks(网络协议)</h3><p>Android系统使用的Linux内核提供的TCP/IP协议栈可能会引入攻击面，1）Linux底层的网络协议栈由C/C++编写，其存在的“缓冲区溢出”等代码问题可能导致远程执行任意代码，2）协议处理过程中某些字段没有判断而导致拒绝服务</p>
+<p>检查方法：代码review，并搜索不安全函数</p>
+<h3 id="Exposed_Network_Services(暴露的网络服务)">Exposed Network Services(暴露的网络服务)</h3><p>Android本身很少暴露网络服务，多是由应用程序暴露，如开启WIFI热点功能后，会监听TCP 53端口</p>
+<p>检查方法：通过nmap扫描或者本地执行netstat -na|grep LISTEN可以获得暴露的服务，再进行分析</p>
+<h3 id="Moblie_Technologies">Moblie Technologies</h3><p>这里指SMS、MMS、电话等蜂窝网络服务暴露的攻击面。</p>
+<p>SMS、MMS服务使用WAP协议，其中的WAP PUSH消息可被用来发送Service Loading request (SL消息)，SL消息可以去调用USSD(Unstructured Supplementary Service Data)功能来执行充值、语音邮箱查询等操作</p>
+<p>USSD指令：当你使用手机键盘输入一些网络已预先制定的数字或者符号比如*#等，再按send也就是拨号键就可以向网络发送一条指令，网络根据你的指令选择你需要的服务提供给你。可以用来打电话、修改PUK等<br><a href="http://baike.baidu.com/link?url=ImBFOug4QRZFJHhypYHxY1i2ZPzzsgQw5Fq-LhWuGD1Bmcvry02IMXqG3QyP7sgZ" target="_blank" rel="external">http://baike.baidu.com/link?url=ImBFOug4QRZFJHhypYHxY1i2ZPzzsgQw5Fq-LhWuGD1Bmcvry02IMXqG3QyP7sgZ</a></p>
+<p>WAP PUSH：服务信息或推入信息，是种特殊格式短信<br>WAP PUSH某站点或某业务链接通短信发送支持WAP PUSH功能手机，通过阅读条短信(服务信息)打短信链接直接访问业务，节省寻找业务时间<br>WAP Push的内容有两种，一种是SI，service indication；另一种 SL，service loading。这两种内容类型的目的都是发送URL链接到手机上。SI是以异步方式发送一个通知、警示、提醒等信息到手机上，用户会看到屏幕上显示这条通知文字内容，然后，提示你是否去那个页面，如果去，手机将激活为WAP浏览器，打开这个链接，浏览其内容。SL则是直接发送一个 URL链接到手机上，手机不会给用户任何提示，自动地启动WAP微浏览器，下载这个URL对应的内容，显示在手机上。让人觉得好像是推送了一个页面下来了似的。MMS就是利用这个机制实现的，已知攻击是发送tel://开头的SL指令可触发手机打电话<br><a href="http://www.cnblogs.com/edward259/archive/2010/01/29/1659415.html" target="_blank" rel="external">http://www.cnblogs.com/edward259/archive/2010/01/29/1659415.html</a></p>
+<h3 id="Client-side_Attack_Surface(客户端攻击面)">Client-side Attack Surface(客户端攻击面)</h3><p>手机上安装的客户端软件引入的的攻击界面</p>
+<p><strong>Browser Attack Surface(浏览器攻击面)</strong></p>
+<p>主要有URL钓鱼、MitM、XSS、CSRF方面的威胁</p>
+<p>android 4.1之前版本使用的是android browser，4.4之前使用chrome for android ，4.4之后使用基于chromium的web browser(libwebview-chromium.so存在于framework层，为上层应用提供API，由于是随framework更新，因此更新慢，容易受到half day攻击)</p>
+<p>另外，还有其他第三方浏览器由于存在漏洞而引人的攻击面</p>
+<p><strong>Web-Powered Mobile Apps(web引擎移动应用)</strong></p>
+<p>使用webview技术而引人的攻击面</p>
+<p>利用WEB View的攻击：.Java-style reflection attack针对<br>addJavascriptInterface和Android AD network?</p>
+<p>Security research firm MWR InfoSecurity released an advisory this week detailing a reflection attack against the addJavaScriptInterface functionality offered by the Android operating system’s WebKit component, which allows developers to define methods which can be called by JavaScript. Although the original intent of the functionality was to expose only clearly defined methods, a trivial sequence of calls could allow full command execution by malicious web pages if any methods are exported at all through this interface. While the issue has been fixed in Android 4.2, MWR’s research shows a wide array of popular apps and ad networks still vulnerable to attacks.</p>
+<p><strong>Ad Networks(广告)</strong></p>
+<p><strong>Media and Document Processing(媒体推送)</strong></p>
+<p>处理图片、文档的开源库，如(libpng、libjpeg)，包括最近的png攻击和stagefright攻击</p>
+<p><strong>Electronic Mail(电子邮件)</strong></p>
+<p>电邮应用引入的漏洞</p>
+<h3 id="Googel_Infrastructure(Google基础服务)">Googel Infrastructure(Google基础服务)</h3><p>Google体系中的后端云服务引人的攻击面</p>
+<p><strong>Google Play</strong></p>
+<p>Google应用市场中可能存在恶意APP或木马APP</p>
+<p><strong>Third-Party App Ecosystems</strong></p>
+<p>非官方应用市场中可能存在伪装为热门APP的恶意程序，以及在热门APP中注入的后门软件</p>
+<p><strong>Google Phones Home</strong></p>
+<p>GTalkService是google云服务中的重要组件，允许google在用户不知情的情况下在用户设备上安装或卸载应用</p>
+<p>已知攻击查询：<a href="https://jon.oberheide.org/" target="_blank" rel="external">https://jon.oberheide.org/</a></p>
+<h2 id="2-Physical_Adjacency(物理邻接攻击)">2.Physical Adjacency(物理邻接攻击)</h2><p>攻击者与被攻击对象在一定范围内，如GPS，WIFI</p>
+<h3 id="Wireless_Communications(无线通讯)">Wireless Communications(无线通讯)</h3><p><strong>GPS</strong></p>
+<p>1.用户位置信息被APP滥用，泄露用户隐私<br>2.GPS spoofing : 发送虚假GPS信号导致GPS设备定位错误</p>
+<p><strong>Baseband</strong></p>
+<p>基带处理芯片（CP）及android.telephony.stack协议栈</p>
+<p>1.假基站<br>2.针对RIL层的攻击：相关硬软件如USRP，BladeRF，开源协议栈OSmocom</p>
+<p><strong>Bluetooth</strong></p>
+<p>包含近30种Profile，每一个profile描述了蓝牙的一种功能</p>
+<p>比如：<br>1.HFP（Hand-free profile）/HSP（Headset profile）定义了如何控制麦克风、外放等外设<br>2.FTP（File transfer profile）<br>3.DUN（Dial-up Networking profile）<br>4.HID（Human Interface Device profile）<br>5.AVRCP（audio/video Remote Control profile）</p>
+<p>可能的攻击方法：Bluejacking,Bluesnarfing,Bluebugging</p>
+<p>使用的此等协议栈：L2CAP/RFCOMM 4.2之后使用Bluedroid在Framework层对上层导出API接口<br><a href="https://source.android.com/devices/bluetooth.html" target="_blank" rel="external">https://source.android.com/devices/bluetooth.html</a></p>
+<p><strong>Wi-Fi</strong></p>
+<p>功能点：连接internet，WIFI直连</p>
+<p>协议和算法：WEP、WPA、WPA2、开源协议栈：wpa_supplicant</p>
+<p>可能的攻击：Rogue热点、MITM</p>
+<p><strong>NFC</strong></p>
+<p>读取Tag，数据传输（Beam）、移动支付</p>
+<p>调用关系：物理NFC芯片-&gt;内核：libpn544_fs.so-&gt;<br>Native：libnfc_jni.so,libnfc.so,libnfc_ndef.so-&gt;<br>Framework：com.android.nfc -&gt;上层APP</p>
+<h3 id="Other_Technologies">Other Technologies</h3><p>Google可穿戴设备使用的技术（Quick Response、Voice Commands）</p>
+<h2 id="3-Local_Attack_Surfaces(本地攻击面)">3.Local Attack Surfaces(本地攻击面)</h2><p>攻击者可以达到实现任意代码执行和提权的目的，这种攻击界面在测试新root方法时最为明显</p>
+<h3 id="Exploring_the_File_System">Exploring the File System</h3><p>文件系统访问权限设置、SUID/SGUID设置，Owner设置</p>
+<p>检查工具：adb shell和Canhazaxs</p>
+<h3 id="Applications_life_cycle">Applications life cycle</h3><p>应用生命周期中引入的攻击面</p>
+<p><strong>install</strong></p>
+<p>安装流程中引入的攻击面，如超长应用名攻击，畸形AndroidManifest.xml标签，APK占位攻击，签名漏洞等。</p>
+<p><strong>Applications run</strong></p>
+<p>运行流程中引入的攻击面</p>
+<p><strong>backup</strong></p>
+<p>应用备份恢复时引入的攻击面，如ALLOW-BACKUP漏洞</p>
+<h3 id="Finding_Other_Local_Attack_Surface">Finding Other Local Attack Surface</h3><p><strong>System Calls</strong></p>
+<p>在源码中以“SYSCALL_DEFINE”定义</p>
+<p><strong>Sockets</strong></p>
+<p>sockets恶意调用</p>
+<p><strong>Binder</strong></p>
+<p><strong>Shared Memory</strong></p>
+<p><strong>Baseband Interface</strong></p>
+<p><strong>Attacking Hardware Support Services</strong></p>
+<p><strong>API</strong></p>
+<p><strong>JAVA Native Interface</strong></p>
+<p>JNI恶意调用，JNI-DOS</p>
+<p><strong>AIDL service Calls</strong></p>
+<p><strong>TrustZone Proxy</strong></p>
+<p>TurstZone Proxy是链接非安全世界和安全世界的代理</p>
+<p><strong>CDEV file_operations</strong></p>
+<p>驱动源码中file_operations中定义了驱动节点的接口，如open/write/read/mmap/ioctl</p>
+<h2 id="4-Physical_Attack_Surfaces(物理攻击面)">4.Physical Attack Surfaces(物理攻击面)</h2><p>攻击需要物理接触设备，虽然大部分物理攻击可防御，但仍很严重因为有些攻击会在瞬间完成</p>
+<h3 id="Dismantling_Devices(拆解设备)">Dismantling Devices(拆解设备)</h3><p>暴露的串口、JTAG口、可拆卸的Flash</p>
+<h3 id="USB">USB</h3><p><strong>Enumerating USB Attack Surfaces</strong></p>
+<p>USB暴露的攻击面取决于设备支持哪些USB modle（ADB、存储、MTP等）</p>
+<p><strong>ADB</strong></p>
+<p>通常使用adb shell，4.2.2之前 ADB shell不需要认证，之后需要</p>
+<p>攻击场景：Juice Jacking 假充电站攻击</p>
+<h3 id="Other_Physical_Attack_Surface">Other Physical Attack Surface</h3><p>SIM Cards、SD Cards、HDMI、exposed test points、docking conectors</p>
+<h2 id="5-Third-Party_Modifications(第三方修改)">5.Third-Party Modifications(第三方修改)</h2><p>如何识别这些定制和修改：可以与Nexus设备对比，例如：<br>1.使用ps命令，进程对比<br>2.文件对比，新增/修改过的文件<br>3.init文件对比，新增的服务和启动项<br>4.源码compare</p>
+<h3 id="OEMs厂家定制预装应用">OEMs厂家定制预装应用</h3><h3 id="遗留的开发调测工具">遗留的开发调测工具</h3><h3 id="对Framework层的修改引入的新功能、API、JNI">对Framework层的修改引入的新功能、API、JNI</h3><h3 id="驱动层新增的驱动节点">驱动层新增的驱动节点</h3>]]></content>
+    <summary type="html">
+    <![CDATA[<p>Android系统有哪些攻击面呢？如何指导我们做好Android安全？</p>
+<p>先上一幅总图：</p>
+<p><img src="/img/and_attack_surface/attack_surface.png" alt="attack_surface"></p>]]>
+    </summary>
+    
+      <category term="Android安全" scheme="http://yoursite.com/tags/Android%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[移动安全相关的业界资料]]></title>
+    <link href="http://yoursite.com/2015/08/24/ziyuan/"/>
+    <id>http://yoursite.com/2015/08/24/ziyuan/</id>
+    <published>2015-08-24T09:35:51.000Z</published>
+    <updated>2015-08-24T11:31:20.000Z</updated>
+    <content type="html"><![CDATA[<p>分享给大家，不谢！</p>
+<p>下面是笔者整理的一些移动安全业界资料，除了经典的乌云、FreeBuf、看雪之外，还有很多互联网安全团队，还有一些Android安全大牛的个人blog：</p>
+<blockquote>
+<p><a href="http://blog.csdn.net/androidsecurity" target="_blank" rel="external">http://blog.csdn.net/androidsecurity</a><br><a href="http://blogs.360.cn/blog/" target="_blank" rel="external">http://blogs.360.cn/blog/</a><br><a href="http://drops.wooyun.org/category/mobile" target="_blank" rel="external">http://drops.wooyun.org/category/mobile</a><br><a href="http://xteam.baidu.com/" target="_blank" rel="external">http://xteam.baidu.com/</a><br><a href="http://security.tencent.com/index.php/blog" target="_blank" rel="external">http://security.tencent.com/index.php/blog</a><br><a href="http://blog.flanker017.me/" target="_blank" rel="external">http://blog.flanker017.me/</a><br><a href="http://blogs.360.cn/360mobile/" target="_blank" rel="external">http://blogs.360.cn/360mobile/</a><br><a href="http://www.scoop.it/t/d-n3n" target="_blank" rel="external">http://www.scoop.it/t/d-n3n</a><br><a href="http://jaq.alibaba.com/blog.htm?id=65" target="_blank" rel="external">http://jaq.alibaba.com/blog.htm?id=65</a><br><a href="http://bbs.pediy.com/" target="_blank" rel="external">http://bbs.pediy.com/</a><br><a href="http://retme.net/index.php/category/AndroidSec/" target="_blank" rel="external">http://retme.net/index.php/category/AndroidSec/</a><br><a href="http://www.colordancer.net/blog/" target="_blank" rel="external">http://www.colordancer.net/blog/</a><br><a href="http://www.9hao.info/" target="_blank" rel="external">http://www.9hao.info/</a><br><a href="http://secauo.com/" target="_blank" rel="external">http://secauo.com/</a><br><a href="http://www.claudxiao.net/" target="_blank" rel="external">http://www.claudxiao.net/</a><br><a href="http://www.freebuf.com/articles/terminal" target="_blank" rel="external">http://www.freebuf.com/articles/terminal</a><br><a href="http://thehackernews.com/" target="_blank" rel="external">http://thehackernews.com/</a><br><a href="http://www.devttys0.com/blog/" target="_blank" rel="external">http://www.devttys0.com/blog/</a><br><a href="http://bobao.360.cn/" target="_blank" rel="external">http://bobao.360.cn/</a><br><a href="http://android.scap.org.cn/avdview.html" target="_blank" rel="external">http://android.scap.org.cn/avdview.html</a><br><a href="https://groups.google.com/forum/#!forum/android-security-discuss" target="_blank" rel="external">https://groups.google.com/forum/#!forum/android-security-discuss</a><br><a href="https://bluebox.com/blog/technical/" target="_blank" rel="external">https://bluebox.com/blog/technical/</a><br><a href="http://androidvulnerabilities.org/index.html" target="_blank" rel="external">http://androidvulnerabilities.org/index.html</a><br><a href="http://www.droidsec.cn/" target="_blank" rel="external">http://www.droidsec.cn/</a><br><a href="http://www.219.me/" target="_blank" rel="external">http://www.219.me/</a><br><a href="http://www.cnblogs.com/2014asm/" target="_blank" rel="external">http://www.cnblogs.com/2014asm/</a><br><a href="http://mulliner.org/android/" target="_blank" rel="external">http://mulliner.org/android/</a></p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>分享给大家，不谢！</p>
+<p>下面是笔者整理的一些移动安全业界资料，除了经典的乌云、FreeBuf、看雪之外，还有很多互联网安全团队，还有一些Android安全大牛的个人blog：</p>
+<blockquote>
+<p><a href="http://blog.csd]]>
+    </summary>
+    
+      <category term="Android安全" scheme="http://yoursite.com/tags/Android%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[基于Struts框架的Web应用安全测试要点]]></title>
+    <link href="http://yoursite.com/2015/08/20/web-test1/"/>
+    <id>http://yoursite.com/2015/08/20/web-test1/</id>
+    <published>2015-08-20T12:15:14.000Z</published>
+    <updated>2015-08-30T11:54:48.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="基于Struts框架的Web应用典型架构">基于Struts框架的Web应用典型架构</h2><p><img src="/img/web_struts.png" alt="web_struts"></p>
+<h3 id="Browser">Browser</h3><p>浏览器是指可以显示网页服务器或者文件系统的HTML文件（标准通用标记语言的一个应用）内容，并让用户与这些文件交互的一种软件。</p>
+<p>国内网民计算机上常见的网页浏览器有，QQ浏览器、Internet Explorer、Firefox、Safari，Opera、Google Chrome、百度浏览器、搜狗浏览器、猎豹浏览器、360浏览器、UC浏览器、傲游浏览器、世界之窗浏览器等，浏览器是最经常使用到的客户端程序。</p>
+<h3 id="web_server">web server</h3><p>Web服务器可以解析(handles)HTTP协议。当Web服务器接收到一个HTTP请求(request)，会返回一个HTTP响应(response)，例如送回一个HTML页面。为了处理一个请求(request)，Web服务器可以响应(response)一个静态页面或图片，进行页面跳转(redirect)，或者把动态响应(dynamic response)的产生委托(delegate)给一些其它的程序例如CGI脚本、JSP(JavaServer Pages)脚本、servlets、ASP(Active Server Pages)脚本、服务器端(server-side)JavaScript，或者一些其它的服务器端(server-side)技术。无论它们(译者注：脚本)的目的如何，这些服务器端(server-side)的程序通常产生一个HTML的响应(response)来让浏览器可以浏览。</p>
+<p>Web服务器一般部署在DMZ(也称“非军事化区”。它是为了解决安装防火墙后外部网络的访问用户不能访问内部网络服务器的问题，而设立的一个非安全系统与安全系统之间的缓冲区)。</p>
+<p>Apache是世界使用排名第一的Web服务器软件。它可以运行在几乎所有广泛使用的计算机平台上，由于其跨平台和安全性被广泛使用，是最流行的Web服务器端软件之一。除此之外，还有kangle和Nginx。</p>
+<h3 id="app_server">app server</h3><p>App Server是运行Java企业组件的平台，构成了应用软件的主要运行环境。当前主流的App Server是BEA公司的Weblogic Server和IBM公司的Websphere以及免费的Jboss。</p>
+<p>但是，大家用得最多的是一款叫Tomcat的免费的开放源代码的Web 应用服务器。Tomcat属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。Tomcat严格意义上并不是一个真正的App Server，它只是一个可以支持运行Serlvet/JSP的Web容器，不过Tomcat也扩展了一些App Server的功能，如JNDI，数据库连接池，用户事务处理等等。</p>
+<p>本文描述的app server是指，满足java servlet规范，提供servlet运行环境，如Tomcat、weblogic，通常部署在内网，一个server可以运行多个独立的web app。</p>
+<h3 id="web_app">web app</h3><p>WebApp是指基于Web的系统和应用，其作用是向广大的最终用户发布一组复杂的内容和功能。</p>
+<p>本文描述的web app是指，基于java servlet构建的应用，提供具体业务功能，通常会采用MVC框架，如struts、spring MVC等</p>
+<h2 id="基于Struts框架的Web应用的安全测试关注点">基于Struts框架的Web应用的安全测试关注点</h2><p><img src="/img/web_app.png" alt="web_app"></p>
+<h3 id="web_server安全测试关注点">web server安全测试关注点</h3><blockquote>
+<p>httpd.conf配置是否安全<br>是否支持https<br>证书密钥保存是否安全<br>进程启动权限是否合理<br>监听的所有端口是否合理<br>日志位置是否合理<br>SSL是否仅支持安全加密算法<br>静态资源是否没有敏感权限<br>静态资源的访问控制是否合理</p>
+</blockquote>
+<h3 id="app_server安全测试关注点">app server安全测试关注点</h3><blockquote>
+<p>server.xml配置是否安全<br>证书密钥的保存是否安全<br>进程启动权限是否合理<br>目录列表功能是否禁用<br>日志安全<br>是否存在默认管理账号<br>是否支持应用自动加载<br>所有app的路径有没有异常<br>是否已经打上已知漏洞的补丁</p>
+</blockquote>
+<h3 id="web_app安全测试关注点">web app安全测试关注点</h3><blockquote>
+<p>首先要关注web app的web.xml的配置，梳理url和filter、servlet的映射关系来确认业务逻辑；<br>再关注struts配置文件(*.struts.xml)，梳理每个action(url)和interceptor的对应关系。</p>
+</blockquote>
+<p>1.filter</p>
+<blockquote>
+<p>梳理url和filter-chain的关系<br>识别过滤器的功能<br>检查过滤器顺序<br>安全功能缺失或逻辑漏洞：<br>1)不可访问目录的保护<br>2)认证逻辑的缺陷<br>3)session与IP是否绑定<br>4)XFF的来源和处理</p>
+</blockquote>
+<p>2.interceptor</p>
+<blockquote>
+<p>package继承关系对拦截器的覆盖<br>梳理url和interceptor的关系<br>识别拦截器的功能<br>拦截器的顺序<br>安全功能的缺失或逻辑漏洞<br>struts公开漏洞补丁的实施情况<br>(参数拦截器、cookie拦截器)</p>
+</blockquote>
+<p>3.servlet&amp;action</p>
+<blockquote>
+<p>敏感功能：上传、下载、删除、导入数据(解析)、导出、目录遍历、权限管理、用户管理<br>普通功能：鉴权(横向越权、纵向越权)、命令注入、SQL注入、XML注入、文件操作</p>
+</blockquote>
+<p>4.其他全局关注点</p>
+<blockquote>
+<p>XSS、CSRF、XSRF</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="基于Struts框架的Web应用典型架构">基于Struts框架的Web应用典型架构</h2><p><img src="/img/web_struts.png" alt="web_struts"></p>
+<h3 id="Browser">Browser</h3>]]>
+    </summary>
+    
+      <category term="web安全" scheme="http://yoursite.com/tags/web%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[浅谈网络安全风险评估(未完待续)]]></title>
+    <link href="http://yoursite.com/2015/08/19/security-test/"/>
+    <id>http://yoursite.com/2015/08/19/security-test/</id>
+    <published>2015-08-19T10:58:26.000Z</published>
+    <updated>2016-01-30T04:42:30.931Z</updated>
+    <content type="html"><![CDATA[<p>笔者曾从事网络安全风险评估工作，很早就想写这个话题了，但觉得写得太细的话，写不完，那暂且就先“浅谈”。</p>
+<p>PS：仅从个人认识角度来谈，如有雷同，就对了。</p>
+<h2 id="什么是网络安全风险评估">什么是网络安全风险评估</h2><p>风险评估(Risk Assessment)的目的是：</p>
+<blockquote>
+<p>识别系统面临的威胁(Threat)<br>判断这种威胁转变成现实后可能带来的影响(Impact)<br>判断这种转变的可能性或难易度(Probability)</p>
+</blockquote>
+<p><strong>风险(Risk)是威胁因素(Threat Agent)利用漏洞(Vulnerability)使威胁(Threat)成为现实，从而让资产(Asset)受到影响(Impact)的潜在可能。</strong></p>
+<p>这句话是不是有点拗口，那就对了:)</p>
+<p>简化一下:<br><strong>风险(Risk)是潜在可能。</strong></p>
+<p>可以理解为:<br><strong>威胁(Threat)是产生风险(Risk)的外因，漏洞(Vulnerability)则是内因，两者的共同作用产生了风险(Risk)。</strong></p>
+<p>不是所有的漏洞(Vulnerability)都需要立即消除，只有存在对应的威胁(Threat)时，该漏洞(Vulnerability)才会导致风险(Risk)，但系统的所有漏洞(Vulnerability)都应该管理起来，因为环境在变，新的威胁(Threat)随时可能出现。威胁分析的作用，就是为决策者判断哪些系统漏洞需要优先解决提供依据。</p>
+<blockquote>
+<p>Risk = Threat *Impact * Probability</p>
+</blockquote>
+<p><img src="/img/security_pg/risk.png" alt="risk"></p>
+<blockquote>
+<p>Threat Agent是Threat的制造者<br>Asset是Risk的承担者<br>Impact是Threat转变为现实后对Asset的影响<br>Attack是Threat Agent让Threat转变为现实产生Impact的方法（Threat materialize）<br>Probability是这种转变的难易程度或可能性<br>Vulnerability是导致Attack成功的Asset的某种内在属性<br>Risk Level(High/Middle/Low)使得我们可以为Risk制定合适的Safeguard</p>
+</blockquote>
+<h2 id="网络安全风险评估的步骤">网络安全风险评估的步骤</h2><p>网络安全风险评估可以在产品开发周期的前期和后期进行。</p>
+<p>前期进行主要为了做安全加固：</p>
+<p><strong>资产识别/系统分析 &gt; 威胁分析 &gt; 识别风险 &gt; 制定消减措施 &gt; 产品响应</strong></p>
+<p>后期进行主要为了做安全测试来检验安全效果(审计/稽核)：</p>
+<p><strong>资产识别/系统分析 &gt; 威胁分析 &gt; 安全测试设计 &gt; 安全测试执行 &gt; 安全问题定级 &gt; 制定消减措施 &gt; 产品响应</strong></p>
+<p><img src="/img/security_pg/threat.png" alt="threat"></p>
+<h2 id="资产识别/系统分析">资产识别/系统分析</h2><p>资产识别是指识别出被评估系统中的关键资产，也就是回答“需要保护什么？”这个问题。一般来书，一个系统的关键资产是这个系统的业务和数据，包括核心业务组件、用户的数据、用于鉴权和认证的密码、密钥等。</p>
+<p>系统分析是进行威胁分析的前提，只有充分了解被评估系统的功能、结构、业务流等信息后，威胁分析才有依据。系统分析也为漏洞识别提供需要的输入。系统分析的第一个步骤是了解系统及其所在的解决方案对外提供的业务功能，知道系统能够做什么，对被分析系统有一个High Level的感性认识，之后通过多个维度（viewpoint）对系统进行分解，最后通过业务流将各分解后的组件串联起来，实现“整体-局部-整体”的分析过程。需要注意的是，在进行系统分析前，必须根据项目的目的和限制条件对系统分析进行约束，否则，系统分析是分析不完的。</p>
+<p>下面举一个例子。笔者以前从事的一个Android指纹认证系统的解决方案级的安全评估（相关敏感信息已经删掉），做系统分析的时候，需要对整个业务有一个概括理解，并画出总体的系统架构图。这个指纹认证系统，涉及Android、Trustzone、APP客户端、APP后台等，有什么接口，如何交互，关键资产存储在哪里，都需要在图中分析出来：</p>
+<p><img src="/img/security_pg/system_analysis.png" alt="system_analysis"></p>
+<p>做完这种系统架构图后，再去根据业务场景或者系统组件来进行多维度的细化分析，方式五花八门，没有什么固定套路，只要分析清楚了就OK。一般来说，可以做以下的分析：</p>
+<blockquote>
+<p>系统的组网情况（处在什么位置/周边系统/…）<br>硬件架构分析（设备/单板/总线/CPU/…）<br>软件架构分析（OS/DB/Platform/Web后台/…）<br>内/外部接口分析（维护接口/业务接口/调试接口/…）<br>典型业务流程/场景分析（业务场景1/业务场景2/…）<br>管理/维护场景分析（近端维护场景/远程维护场景/…）<br>关键事件分析（登录/鉴权/认证/数据读写/…）</p>
+</blockquote>
+<h2 id="威胁分析">威胁分析</h2><p>学习如何做威胁分析之前，需要了解什么是威胁。</p>
+<p>Threat:<br>A set of potential incidents in which a threat agent causes a threat event to an asset using a specific entry point into the system</p>
+<p>那么一般来说有什么威胁呢？可以从安全三元组来理解：</p>
+<p>CIA（confidentiality, integrity, and availability），指“机密性”、“完整性”、“可用性”，加上“抗抵赖性”是需要确保的系统安全属性。</p>
+<p>威胁分类：</p>
+<blockquote>
+<p>•    对机密性的威胁<br>如Information Disclosure：通过嗅探、暴力破解等手段窃取用户身份，认证信息，仿冒合法用户访问系统。攻击者非法获得系统中保存的或传输过程中的机密数据，如用户认证信息、用户业务数据、系统代码等<br>•    对完整性的威胁<br>如Tampering with Data：通过修改发送给系统的数据或从系统收到的数据，影响系统业务逻辑，比如绕过认证机制、欺骗计费系统、执行越权操作等<br>•    对可用性的威胁<br>如Denial of Service：通过Flood、畸形报文等攻击等手段造成系统不能提供正常的服务<br>•    对抗抵赖性的威胁<br>通过修改系统访问日志、审计日志来隐藏攻击痕迹、修改业务行为记录</p>
+</blockquote>
+<p>威胁分析就是识别威胁，根据“威胁”的定义，实际上是要识别构成威胁的各组成部分，来总结出一个句子：</p>
+<p><strong>攻击者（威胁源），利用XXX漏洞（漏洞），通过XXX方式（攻击界面、攻击手段），对XXX（关键资产）产生了XXX威胁（后果）</strong></p>
+<p>说白了，这个阶段就是造句。</p>
+<p>但威胁分析是整个安全评估最难的环节，需要采用多种方法去YY有什么威胁、有什么可能性、有什么攻击面、外部攻击者如何攻击系统、内部攻击者(内鬼)如何攻击系统。</p>
+<p>虽说威胁分析套路很多，只要识别出威胁就可以，但业界也有一些比较成熟的建模，比如X.805分层分析、攻击树模型、微软的STRIDE威胁建模等。这里就不再详述，请自行google。</p>
+<p>这里给个STRIDE作为例子：</p>
+<p><img src="/img/security_pg/threat_analysis.png" alt="threat_analysis"></p>
+<p>分析完威胁，就要根据这些威胁点来进行安全测试。</p>
+<p>这里就有很多领域，比如web安全(前端+后端)、Android/IOS安全、云安全等等</p>
+<p>(未完待续)</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>笔者曾从事网络安全风险评估工作，很早就想写这个话题了，但觉得写得太细的话，写不完，那暂且就先“浅谈”。</p>
+<p>PS：仅从个人认识角度来谈，如有雷同，就对了。</p>
+<h2 id="什么是网络安全风险评估">什么是网络安全风险评估</h2><p>风险评估(Risk ]]>
+    </summary>
+    
+      <category term="安全评估" scheme="http://yoursite.com/tags/%E5%AE%89%E5%85%A8%E8%AF%84%E4%BC%B0/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[web开发学习笔记(未完待续)]]></title>
+    <link href="http://yoursite.com/2015/08/17/web-kaifa/"/>
+    <id>http://yoursite.com/2015/08/17/web-kaifa/</id>
+    <published>2015-08-17T15:07:27.000Z</published>
+    <updated>2015-08-30T11:54:52.000Z</updated>
+    <content type="html"><![CDATA[<p>学web安全，要先从web开发入手，以下学习笔记摘录自《Java Web 整合开发完全自学手册》(机械出版社)/《Java Web开发详解——XML+XSLT+Servlet+JSP》孙鑫(电子工业出版社)/《Java开发实战经典——基础篇》张兴华(清华大学出版社)/Jackal@HW_ICSL</p>
+<h2 id="第一篇_Java开发Web应用">第一篇 Java开发Web应用</h2><h3 id="Web应用的发展">Web应用的发展</h3><p>1.静态页面：HTML网页<br>2.动态页面的鼻祖：CGI<br>3.微软开发的代替CGI脚本程序的一种应用：ASP和ASP.NET<br>4.草根中走出来的巨人：PHP<br>5.来自JAVA的阵营：JSP和J2EE<br>6.模型-视图-控制器：MVC<br>7.Ajax</p>
+<h3 id="学习JSP">学习JSP</h3><h2 id="杂篇">杂篇</h2><p>SSH，就是Strusts+Spring+Hibernate</p>
+<p>SSI，就是Strusts+Spring+iBATIS</p>
+<p>Apache是web server，配置文件是httpd.conf<br>Tomcat是web容器(servlet)，配置文件是sever.xml<br>web应用的配置文件是web.xml<br>struts的配置文件是*.struts.xml</p>
+<p>最早的Web是以静态Web出现的，用户在浏览器中输入网址将请求通过HTTP协议传送到Web服务器上，服务器会根据用户的请求找到相应的网页文件(*.html)，接着再通过HTTP协议传回到客户浏览器上进行显示</p>
+<p><img src="/img/webkaifa/jingtai.png" alt="jingtai"></p>
+<p>动态Web流程：所有请求不再直接提交给Web服务器，而是通过Web服务插件进行接收，此插件的主要目的是用于区分用户所发出的请求是动态请求还是静态请求。如果用户发出的是静态请求，则会将用户请求交给Web服务器，并通过文件系统将用户所需要的资源发回给客户端浏览器，这一点与最初的静态Web处理流程完全一样；但如果此时的请求是动态请求，则会将所有请求交给Web容器进行处理，在Web容器中将会采用拼凑代码的形式(主要是拼凑HTML)动态地生成数据并通过Web服务器发回给客户端浏览器。</p>
+<p><img src="/img/webkaifa/dongtai.png" alt="dongtai"></p>
+<p>静态Web与动态Web最本质的区别：静态Web无法进行数据库操作，动态Web可以进行数据库操作。</p>
+<p>Tomcat中的server.xml的配置：</p>
+<p>Connector表示客户端和service之间的连接，其中port 指定服务器端要创建的端口号，并在这个端口监听来自客户端的请求 ，例如：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">Connector</span> <span class="attribute">port</span>=<span class="value">"8080"</span> <span class="attribute">protocol</span>=<span class="value">"HTTP/1.1"</span></span><br><span class="line">           <span class="attribute">connectionTimeout</span>=<span class="value">"20000"</span></span><br><span class="line">           <span class="attribute">redirectPort</span>=<span class="value">"8443"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">Connector</span> <span class="attribute">port</span>=<span class="value">"8009"</span> <span class="attribute">protocol</span>=<span class="value">"AJP/1.3"</span> <span class="attribute">redirectPort</span>=<span class="value">"8443"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Host表示一个虚拟主机，其中name指定主机名 ，appBase 应用程序基本目录，即存放应用程序的目录(它将请求url与该虚拟主机的context进行匹配，并把请求转给对应的context来处理)，unpackWARs如果为true，则tomcat会自动将WAR文件解压，否则不解压，直接从WAR文件中运行应用程序 ，autoDeploy默认为true，表示如果有新的WEB应用放入appBase并且Tomcat在运行的情况下，自动载入应用，例如:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">Host</span> <span class="attribute">name</span>=<span class="value">"localhost"</span>  <span class="attribute">appBase</span>=<span class="value">"webapps"</span></span><br><span class="line">      <span class="attribute">unpackWARs</span>=<span class="value">"true"</span> <span class="attribute">autoDeploy</span>=<span class="value">"true"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>(未完待续)</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>学web安全，要先从web开发入手，以下学习笔记摘录自《Java Web 整合开发完全自学手册》(机械出版社)/《Java Web开发详解——XML+XSLT+Servlet+JSP》孙鑫(电子工业出版社)/《Java开发实战经典——基础篇》张兴华(清华大学出版社)/Jac]]>
+    </summary>
+    
+      <category term="web开发" scheme="http://yoursite.com/tags/web%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[15分钟看懂Android stagefright漏洞(以两枚MPEG4_covr漏洞为例)]]></title>
+    <link href="http://yoursite.com/2015/08/14/stagefright-covr/"/>
+    <id>http://yoursite.com/2015/08/14/stagefright-covr/</id>
+    <published>2015-08-14T12:35:08.000Z</published>
+    <updated>2015-08-17T15:39:52.000Z</updated>
+    <content type="html"><![CDATA[<p>扣吧力作，欢迎转载，转载请注明来自colbert337.github.io</p>
+<h2 id="StageFright漏洞有多犀利">StageFright漏洞有多犀利</h2><p><img src="/img/yitiaocaixin.png" alt="yitiaocaixin"></p>
+<h2 id="什么是StageFright">什么是StageFright</h2><p>StageFright是一个Android中的系统服务，会被mediaserver调用，可处理各种多媒体格式，由Natvie C++代码实现：</p>
+<p><img src="/img/stragefright.png" alt="stragefright"></p>
+<h2 id="漏洞简介">漏洞简介</h2><p>Android Stagefright框架中发现了多个integer overflow/underflow等漏洞，可导致拒绝服务，甚至有任意代码执行等问题。</p>
+<p>攻击者通过发送包含特制媒体文件的MMS或WEB页来触发该漏洞。由于stagefright不只是用来播放媒体文件的，还能自动产生缩略图，或者从视频或音频文件中抽取元数据，如长度、高度、宽度、帧频、频道和其他类似信息。因此接收到恶意彩信的用户只要查看缩略图就可触发该漏洞。</p>
+<h2 id="漏洞影响">漏洞影响</h2><p>“Stagefright”媒体播放引擎库在Android 2.2中引入，至5.1的所有版本上均存在此漏洞，预计会有95%的Android设备,约有九亿五千万的安卓设备受该漏洞影响.</p>
+<p>使用Stagefright库的应用程序以Media权限运行，成功利用漏洞，允许攻击者浏览器媒体库相应的文件，但通过权限提升攻击，可完全控制设备。</p>
+<p>该Stagefright漏洞所对应的CVE ID如下：</p>
+<blockquote>
+<p>CVE-2015-1538<br>CVE-2015-1539<br>CVE-2015-3824<br>CVE-2015-3826<br>CVE-2015-3827<br>CVE-2015-3828<br>CVE-2015-3829  </p>
+</blockquote>
+<h2 id="MPEG4文件格式基础">MPEG4文件格式基础</h2><p>这里需要大家简单了解一下MPEG4文件格式。</p>
+<p>MP4(MPEG-4 Part 14)是一种常见的多媒体容器格式，它是在“ISO/IEC 14496-14”标准文件中定义的。</p>
+<p>MP4是一种描述较为全面的容器格式，被认为可以在其中嵌入任何形式的数据，各种编码的视频、音频等都不在话下。MP4格式的官方文件后缀名是“.mp4”，还有其他的以mp4为基础进行的扩展或者是缩水版本的格式，包括：M4V,  3GP, F4V等。</p>
+<p>基础知识：</p>
+<p>1、 MP4文件，由许多Box和FullBox组成。</p>
+<p>2、 Box，每个Box由Header和Data组成，基本结构是：</p>
+<p><img src="/img/box1.png" alt="box1"></p>
+<p>3、 FullBox，是Box的扩展，Box结构的基础上在Header中增加8bits version和24bits flags。</p>
+<p>4、 Header很重要，包含了整个Box的长度size和类型type。</p>
+<p>当size==0时，代表这是文件中最后一个Box；</p>
+<p>当size==1时，意味着Box长度需要更多bits来描述，超过了uint32的最大数值，会用往后偏移8位后的8位uint64来存放大小。(有点拗口，但很重要！)</p>
+<p>当type是uuid时，代表Box中的数据是用户自定义扩展类型。</p>
+<p>5、 Data，是Box的实际数据，可以是纯数据也可以是更多的子Boxes。</p>
+<p>6、 当一个Box的Data中是一系列子Box时，这个Box又可成为Container Box。</p>
+<p>如图所示：</p>
+<p><img src="/img/box2.png" alt="box2"></p>
+<h2 id="两枚MPEG4_covr漏洞分析">两枚MPEG4_covr漏洞分析</h2><p>Stagefright漏洞有7个，为了方便大家理解，笔者只举两个漏洞作为例子。</p>
+<p>这两个漏洞都是出现在对MPEG4文件抽取解析covr box的地方，故笔者将其命名为【MPEG4_covr漏洞】</p>
+<p>选取了Android 5.1.0_r1的代码来分析，链接如下：</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">http:</span>//androidxref.com/<span class="number">5.1</span><span class="number">.0</span>_<span class="built_in">r1</span>/xref/frameworks/av/media/libstagefright/MPEG4Extractor.cpp</span><br></pre></td></tr></table></figure>
+<p>来来来，上代码，这段代码里面有两个漏洞，你能看出来吗？</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">case</span> <span class="title">FOURCC</span><span class="params">(<span class="string">'c'</span>, <span class="string">'o'</span>, <span class="string">'v'</span>, <span class="string">'r'</span>)</span>:</span><br><span class="line"></span>&#123;</span><br><span class="line">    *offset += chunk_size;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (mFileMetaData != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        ALOGV(<span class="string">"chunk_data_size = %lld and data_offset = %lld"</span>,</span><br><span class="line">                chunk_data_size, data_offset);</span><br><span class="line">        sp&lt;ABuffer&gt; buffer = <span class="keyword">new</span> ABuffer(chunk_data_size + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span> (mDataSource-&gt;readAt(</span><br><span class="line">            data_offset, buffer-&gt;data(), chunk_data_size) != (<span class="keyword">ssize_t</span>)chunk_data_size) &#123;</span><br><span class="line">            <span class="keyword">return</span> ERROR_IO;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> kSkipBytesOfDataBox = <span class="number">16</span>;</span><br><span class="line">        mFileMetaData-&gt;setData(</span><br><span class="line">            kKeyAlbumArt, MetaData::TYPE_NONE,</span><br><span class="line">            buffer-&gt;data() + kSkipBytesOfDataBox, chunk_data_size - kSkipBytesOfDataBox);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第一个漏洞">第一个漏洞</h3><p>integer overflow when processing covr MPEG4 atoms</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sp</span>&lt;<span class="type">ABuffer</span>&gt; buffer = new <span class="type">ABuffer</span>(chunk_data_size + <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">if</span> (mDataSource-&gt;readAt(</span><br><span class="line">                    data_offset, buffer-&gt;<span class="typedef"><span class="keyword">data</span><span class="container">()</span>, chunk_data_size) != <span class="container">(<span class="title">ssize_t</span>)</span>chunk_data_size) <span class="container">&#123;</span><br><span class="line">                    <span class="title">return</span> <span class="type">ERROR_IO</span>;</span><br><span class="line">                &#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>由于未对chunk_data_size的长度进行限制，当chunk_data_size = SIZE_MAX = 0xFFFFFFFF，chunk_data_size + 1就会发生整数溢出，使得chunk_data_size + 1 = 0，造成了buffer申请内存的长度为0，然后readAt函数中再对buffer进行拷贝数据操作，导致堆越界。</p>
+<p>看看readAt函数的实现，发现直接就用memcpy往*data里面写内容了(也就是buffer-&gt;data())，肯定会写穿。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ssize_t</span> MPEG4DataSource::readAt(<span class="keyword">off64_t</span> offset, <span class="keyword">void</span> *data, <span class="keyword">size_t</span> size) &#123;</span><br><span class="line">    Mutex::<span class="function">Autolock <span class="title">autoLock</span><span class="params">(mLock)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (offset &gt;= mCachedOffset</span><br><span class="line">            &amp;&amp; offset + size &lt;= mCachedOffset + mCachedSize) &#123;</span><br><span class="line">        <span class="built_in">memcpy</span>(data, &amp;mCache[offset - mCachedOffset], size);</span><br><span class="line">        <span class="keyword">return</span> size;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> mSource-&gt;readAt(offset, data, size);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>补丁链接:<br><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/CyanogenMod/android_frameworks_av/commit/c<span class="number">50f5a29f50</span><span class="number">515c88f143</span>0a1982aea<span class="number">5e19e19b0</span>a</span><br></pre></td></tr></table></figure></p>
+<p>POC也很简单，只需要 chunk_data_size = 0xFFFFFFFF，那么如何做到呢？</p>
+<p>仔细阅读MPEG4Extractor.cpp前面的代码：</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">off64_t chunk_dat<span class="built_in">a_size</span> = *offset + chunk_size - dat<span class="built_in">a_offset</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">off64_t</span> data_offset = *offset + <span class="number">8</span>;</span><br></pre></td></tr></table></figure>
+<p>可以推导出<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*offset + chunk_size - (*offset + <span class="number">8</span>) = <span class="number">0xFFFFFFFF</span></span><br></pre></td></tr></table></figure></p>
+<p>也就是<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chunk_size = <span class="number">0xFFFFFFFF</span> + <span class="number">8</span></span><br></pre></td></tr></table></figure></p>
+<p>我们回顾一下BOX Header的数据结构：</p>
+<p><img src="/img/box1.png" alt="box1"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">uint64_t</span> chunk_size = ntohl(hdr[<span class="number">0</span>]);</span><br><span class="line"><span class="keyword">uint32_t</span> chunk_type = ntohl(hdr[<span class="number">1</span>]);</span><br></pre></td></tr></table></figure>
+<p>从代码可以看出：</p>
+<p>1) chunk_size其实就是MP4格式的BOX Header中的的Box长度size<br>2) 这里的chunk_type则是(int)’covr’<br>3) chunk_size的类型是uint64_t，是可以大于0xFFFFFFFF的：</p>
+<p>继续看代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (chunk_size == <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (mDataSource-&gt;readAt(*offset + <span class="number">8</span>, &amp;chunk_size, <span class="number">8</span>) &lt; <span class="number">8</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> ERROR_IO;</span><br><span class="line">    &#125;</span><br><span class="line">    chunk_size = ntoh64(chunk_size);</span><br><span class="line">    data_offset += <span class="number">8</span>;</span><br></pre></td></tr></table></figure></p>
+<p>当chunk_size == 1时，就读取*offset + 8处的8个字节，作为chunk_size的值，同时data_offset会加8。(也就是MP4格式基础里面说的，当size==1时，会用往后偏移8位后的8位uint64来存放大小)</p>
+<p>由于*offset就是BOX Header的开头，所以我们构造BOX Header的前8位为：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> ‘c’ ‘o’ ‘v’ ‘r’</span><br></pre></td></tr></table></figure></p>
+<p>此时，*offset+8的地方就是真正的chunk_size了，但由于chunk_size == 1时候，data_offset += 8，所以上面的公式已经不成立，需要重新计算：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*offset + chunk_size - (*offset + <span class="number">8</span> + <span class="number">8</span>) = <span class="number">0xFFFFFFFF</span></span><br></pre></td></tr></table></figure>
+<p>最后得出chunk_size = 0xFFFFFFFF + 16 = 0x10000000F</p>
+<p>所以最后我们构造BOX Header的为：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> ‘c’ ‘o’ ‘v’ ‘r’ <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">0F</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="第二个漏洞">第二个漏洞</h3><p>integer underflow in covr MPEG4 processing</p>
+<p>问题出在这里：<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">const</span> int kSkipBytesOfDataBox = <span class="number">16</span>;</span><br><span class="line">                mFileMetaData-&gt;setData(</span><br><span class="line">                    kKeyAlbumArt, <span class="type">MetaData</span>::<span class="type">TYPE_NONE</span>,</span><br><span class="line">                    buffer-&gt;<span class="typedef"><span class="keyword">data</span><span class="container">()</span> + kSkipBytesOfDataBox, chunk_data_size - kSkipBytesOfDataBox);</span></span><br></pre></td></tr></table></figure></p>
+<p>看setData的第三个参数，由于未检测chunk_data_size的长度，如果chunk_data_size – kSkipBytesOfDataBox为负数，会导致整数下溢，变成一个非常大的无符号整型。</p>
+<p>setData的第三个参数很大会怎么样呢？再看看setData的实现：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> MetaData::typed_data::setData(</span><br><span class="line">        <span class="keyword">uint32_t</span> type, <span class="keyword">const</span> <span class="keyword">void</span> *data, <span class="keyword">size_t</span> size) &#123;</span><br><span class="line">    clear();</span><br><span class="line"></span><br><span class="line">    mType = type;</span><br><span class="line">    allocateStorage(size);</span><br><span class="line">    <span class="built_in">memcpy</span>(storage(), data, size);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>setData的第三个参数的类型是size_t，当传入size=0xFFFFFFFF，allocateStorage(size)就会失败，返回null，而下一行代码memcpy没有做判断就往storage()写内容了，导致出错。</p>
+<p>补丁链接：<br><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/CyanogenMod/android_frameworks_av/commit/b<span class="number">1f29294f1</span>a5831eb52a81d3ee<span class="number">082a9475</span>f6e879</span><br></pre></td></tr></table></figure></p>
+<p>第二个漏洞的POC就简单多了，因为kSkipBytesOfDataBox = 16，所以推导过程如下：</p>
+<blockquote>
+<p>chunk_data_size &lt;= kSkipBytesOfDataBox<br>推到出 offset + chunk_size - offset - 8 &lt;= 16<br>推到出 chunk_size - 8 &lt;= 16<br>推到出 chunk_size &lt;= 24(0x18)</p>
+</blockquote>
+<p>所以当chunk_size的值&lt;=24时会触发漏洞(chunk_size不能等于1哦)</p>
+<p>我们构造BOX Header的一个样本（chunk_size=0x07）：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">07</span> ‘c’ ‘o’ ‘v’ ‘r’</span><br></pre></td></tr></table></figure></p>
+<h2 id="攻击路径">攻击路径</h2><blockquote>
+<p>发送嵌入恶意视频文件的彩信<br>构建嵌入恶意视频的WEB页，诱使用户打开<br>在SD卡构建恶意视频文件，诱使用户打开</p>
+</blockquote>
+<h2 id="解决方案建议">解决方案建议</h2><blockquote>
+<p>尽快打补丁<br>禁用Stagefright服务<br>不要轻易打开陌生人发的含有MP4的彩信<br>留心恶意URL和恶意视频文件</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>扣吧力作，欢迎转载，转载请注明来自colbert337.github.io</p>
+<h2 id="StageFright漏洞有多犀利">StageFright漏洞有多犀利</h2><p><img src="/img/yitiaocaixin.png" alt="yitia]]>
+    </summary>
+    
+      <category term="Android安全" scheme="http://yoursite.com/tags/Android%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[一种常用的Android NDK对抗so动态调试方法]]></title>
+    <link href="http://yoursite.com/2015/08/11/antidebug/"/>
+    <id>http://yoursite.com/2015/08/11/antidebug/</id>
+    <published>2015-08-11T15:40:19.000Z</published>
+    <updated>2015-08-14T16:06:54.000Z</updated>
+    <content type="html"><![CDATA[<p>扣吧力作，欢迎转载，转载请注明来自colbert337.github.io</p>
+<p>在Linux中，进程的状态可以通过/proc/PID/status来查看，其中TracerPid字段的取值，指示了跟踪当前进程的进程ID，如果是0，表示没有跟踪。</p>
+<p>攻击者动态调试so，需要使用gdb或者IDA的android_server（底层是trace一类的函数）来attach目标进程，此时/proc/PID/status中的TracerPid不为0。利用这个特性，我们就可以在so中预置检测TracerPid的函数，来判断当前进程有没有被跟踪调试，如何发现被调试就退出或者自毁。下面展示一个demo：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//anti-debug，对抗动态调试</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">is_traced</span><span class="params">()</span></span>&#123;</span><br><span class="line">    FILE *fp = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">int</span> flag = <span class="number">1</span>;<span class="comment">//flag=1表示被调试</span></span><br><span class="line">    <span class="keyword">char</span> buf[<span class="number">100</span>], *ptr;</span><br><span class="line">    <span class="keyword">int</span> ppid;</span><br><span class="line">    <span class="built_in">memset</span>(buf, <span class="number">0</span>, <span class="keyword">sizeof</span>(buf));</span><br><span class="line">    <span class="built_in">sprintf</span>(buf, <span class="string">"/proc/%d/status"</span>, getpid());</span><br><span class="line">    fp = fopen(buf, <span class="string">"r"</span>);</span><br><span class="line">    <span class="keyword">if</span>(fp == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    <span class="keyword">while</span>(fgets(buf, <span class="keyword">sizeof</span>(buf)-<span class="number">1</span>, fp))&#123;</span><br><span class="line">        <span class="keyword">if</span>(ptr = <span class="built_in">strstr</span>(buf, <span class="string">"TracerPid:"</span>))&#123;</span><br><span class="line">            <span class="built_in">sscanf</span>(ptr + <span class="built_in">strlen</span>(<span class="string">"TracerPid:"</span>), <span class="string">"%d"</span>, &amp;ppid);</span><br><span class="line">            <span class="comment">//sscanf() - 从一个字符串中读进与指定格式相符的数据。</span></span><br><span class="line">            <span class="keyword">if</span>(!ppid)<span class="comment">//若ppid为0，则表示没有被调试，flag=0</span></span><br><span class="line">                flag = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fp);</span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们在关键的函数执行前，可以进行以下判断：</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//anti-debug</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">is</span><span class="number">_</span>traced()) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<p>扣吧力作，欢迎转载，转载请注明来自colbert337.github.io</p>
+<p>在Linux中，进程的状态可以通过/proc/PID/status来查看，其中TracerPid字段的取值，指示了跟踪当前进程的进程ID，如果是0，表示没有跟踪。</p>
+<p>攻击者]]>
+    </summary>
+    
+      <category term="Android安全" scheme="http://yoursite.com/tags/Android%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[菜鸟如何学习Android安全]]></title>
+    <link href="http://yoursite.com/2015/08/10/android-1/"/>
+    <id>http://yoursite.com/2015/08/10/android-1/</id>
+    <published>2015-08-10T14:16:23.000Z</published>
+    <updated>2015-08-14T16:06:58.000Z</updated>
+    <content type="html"><![CDATA[<p>扣吧力作，欢迎转载，转载请注明来自colbert337.github.io</p>
+<p>Android安全是一个很大的课题，也是非常热门的话题。Android的开源和碎片化两个因素，决定了Android安全在攻防两端都大有可为，面对高度定制化的海量Android平台产品，漏洞往往层出不穷。</p>
+<p>笔者觉得菜鸟（初学者）可以按照以下顺序去学习Android安全（默认菜鸟已经有网络安全基础，如安全评估方法论、密码学等）：<br>一、先学Android基础和Android开发<br>1）Android系统学习<br>2）Android开发环境搭建<br>3）Android应用开发（JAVA）<br>4）Android NDK开发（C/C++）</p>
+<p>二、再学Android应用层安全<br>1）Android应用安全<br>2）Android数据安全</p>
+<p>三、再学Android系统层安全<br>1）Android系统层安全(Framework)<br>2) Android系统层安全（Native）<br>3）Android系统层安全(kernal)</p>
+<p>以上内容学习的同时，还可以根据兴趣选择性的以下几个方面加强（不分顺序）：<br>1) Android应用逆向<br>2）ARM/MIPS反汇编<br>3）应用服务端安全（web安全）<br>4）Android/Linux驱动开发<br>5）Android系统源码编译<br>6）Android root技术<br>7) CP侧（Moderm）安全<br>8) 启动和升级（fastboot）安全</p>
+<p>此外，为了提高攻防技术，还可以在以下几个方面去努力：<br>1）漏洞挖掘用例化<br>2）分析业界漏洞，总结出漏洞库<br>3）分析业界POC，总结出攻击模式库<br>4）在漏洞挖掘的过程，尝试总结某种类型漏洞的特点，输出自动化漏洞挖掘工具<br>5）在漏洞利用的过程，尝试总结某种利用方式的特点，输出自动化漏洞利用工具</p>
+<p>最后，有条件的多参会跟业界大牛接触，没条件的多读Android源码，多折腾设备，很快就可以从菜鸟成为大牛。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>扣吧力作，欢迎转载，转载请注明来自colbert337.github.io</p>
+<p>Android安全是一个很大的课题，也是非常热门的话题。Android的开源和碎片化两个因素，决定了Android安全在攻防两端都大有可为，面对高度定制化的海量Android平台产品，]]>
+    </summary>
+    
+      <category term="Android安全" scheme="http://yoursite.com/tags/Android%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[关于扣吧的移动城堡]]></title>
+    <link href="http://yoursite.com/2015/08/09/my-new-post/"/>
+    <id>http://yoursite.com/2015/08/09/my-new-post/</id>
+    <published>2015-08-09T12:58:52.000Z</published>
+    <updated>2015-08-09T13:45:16.000Z</updated>
+    <content type="html"><![CDATA[<p>大家好，我叫扣吧</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>大家好，我叫扣吧</p>
+]]>
+    </summary>
+    
+      <category term="test" scheme="http://yoursite.com/tags/test/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Mulholland Drive]]></title>
+    <link href="http://yoursite.com/2011/02/07/MulhollandDrive/"/>
+    <id>http://yoursite.com/2011/02/07/MulhollandDrive/</id>
+    <published>2011-02-06T18:25:47.000Z</published>
+    <updated>2015-08-11T14:35:42.000Z</updated>
+    <content type="html"><![CDATA[<p>以前看Memento（记忆碎片），大爱，今天看了Mulholland Drive（穆赫兰道），才发现了更爱。<br>震撼。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>以前看Memento（记忆碎片），大爱，今天看了Mulholland Drive（穆赫兰道），才发现了更爱。<br>震撼。</p>
+]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[今天你匹配了吗?]]></title>
+    <link href="http://yoursite.com/2010/11/20/pipei/"/>
+    <id>http://yoursite.com/2010/11/20/pipei/</id>
+    <published>2010-11-20T05:42:45.000Z</published>
+    <updated>2015-08-11T15:07:42.000Z</updated>
+    <content type="html"><![CDATA[<p>身为射频电路和微带天线领域的小王子，最近经常接触到匹配这个词</p>
+<p>什么阻抗匹配，共轭匹配等等</p>
+<p>负载阻抗等于源阻抗，就没反射，实现源最大功率输出</p>
+<p>行波状态，好极了，可以超神了</p>
+<p>突然发现这个词很有哲学意味</p>
+<p>可能是受老褚的启发</p>
+<p>人，最需要的是匹配</p>
+<p>不匹配，行驻波，做什么事都事倍功半</p>
+<p>不匹配，没状态，做啥都没意思</p>
+<p>人的内心是很强大的，就是一个源，同时，源也是相对稳定的</p>
+<p>但是，世间上的事情纷繁复杂，宛如千变万化的负载</p>
+<p>唯有匹配两者，才能实现人生价值</p>
+<p>于是，我们苦苦追寻，探求主观通往客观的道路，感受心灵与宇宙的对话，遥望信念与理想的距离</p>
+<p>这个过程很曲折</p>
+<p>每一次的倒下，每一次的反射</p>
+<p>都损耗了我们的青春，都燃烧了我们的生命</p>
+<p>然而，我深信，源是很猛的，只要内心足够强大</p>
+<p>每一次的倒下，都是思想的驻步，每一次的反射，都是心灵的升华</p>
+<p>终有一天，我们会找到属于自己的路</p>
+<p>世界上最远的距离，也许就是这样走过来了</p>
+<p>没错，这就是匹配网络</p>
+<p>。。。。。。</p>
+<p>人生没有过错，只有错过</p>
+<p>希望大家都能找到合适自己的匹配网络</p>
+<p>PS:但是我建议大家还是先找个负载先。。。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>身为射频电路和微带天线领域的小王子，最近经常接触到匹配这个词</p>
+<p>什么阻抗匹配，共轭匹配等等</p>
+<p>负载阻抗等于源阻抗，就没反射，实现源最大功率输出</p>
+<p>行波状态，好极了，可以超神了</p>
+<p>突然发现这个词很有哲学意味</p>
+<p>可能是]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+</feed>

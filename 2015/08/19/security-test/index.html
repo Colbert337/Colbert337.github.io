@@ -1,0 +1,426 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>浅谈网络安全风险评估(未完待续) | Colbert&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="Colbert337">
+    
+    <meta name="description" content="笔者曾从事网络安全风险评估工作，很早就想写这个话题了，但觉得写得太细的话，写不完，那暂且就先“浅谈”。
+PS：仅从个人认识角度来谈，如有雷同，就对了。
+什么是网络安全风险评估风险评估(Risk Assessment)的目的是：
+
+识别系统面临的威胁(Threat)判断这种威胁转变成现实后可能带来的影">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Colbert&#39;s blog" title="Colbert&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Colbert&#39;s blog">Colbert&#39;s blog</a></h1>
+				<h2 class="blog-motto">扣吧的移动城堡</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">主页 | Home</a></li>
+					
+						<li><a href="/archives">归档 | Archives</a></li>
+					
+						<li><a href="/novel">小说 | Novel</a></li>
+					
+						<li><a href="/about">简介 | About</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/08/19/security-test/" title="浅谈网络安全风险评估(未完待续)" itemprop="url">浅谈网络安全风险评估(未完待续)</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="Colbert337">Colbert337</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-08-19T10:58:26.000Z" itemprop="datePublished">2015-08-19</time>
+    更新日期:<time datetime="2016-01-30T04:42:30.931Z" itemprop="dateModified">2016-01-30</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是网络安全风险评估"><span class="toc-number">1.</span> <span class="toc-text">什么是网络安全风险评估</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络安全风险评估的步骤"><span class="toc-number">2.</span> <span class="toc-text">网络安全风险评估的步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#资产识别/系统分析"><span class="toc-number">3.</span> <span class="toc-text">资产识别/系统分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#威胁分析"><span class="toc-number">4.</span> <span class="toc-text">威胁分析</span></a></li></ol>
+		</div>
+		
+		<p>笔者曾从事网络安全风险评估工作，很早就想写这个话题了，但觉得写得太细的话，写不完，那暂且就先“浅谈”。</p>
+<p>PS：仅从个人认识角度来谈，如有雷同，就对了。</p>
+<h2 id="什么是网络安全风险评估">什么是网络安全风险评估</h2><p>风险评估(Risk Assessment)的目的是：</p>
+<blockquote>
+<p>识别系统面临的威胁(Threat)<br>判断这种威胁转变成现实后可能带来的影响(Impact)<br>判断这种转变的可能性或难易度(Probability)</p>
+</blockquote>
+<p><strong>风险(Risk)是威胁因素(Threat Agent)利用漏洞(Vulnerability)使威胁(Threat)成为现实，从而让资产(Asset)受到影响(Impact)的潜在可能。</strong></p>
+<p>这句话是不是有点拗口，那就对了:)</p>
+<p>简化一下:<br><strong>风险(Risk)是潜在可能。</strong></p>
+<p>可以理解为:<br><strong>威胁(Threat)是产生风险(Risk)的外因，漏洞(Vulnerability)则是内因，两者的共同作用产生了风险(Risk)。</strong></p>
+<p>不是所有的漏洞(Vulnerability)都需要立即消除，只有存在对应的威胁(Threat)时，该漏洞(Vulnerability)才会导致风险(Risk)，但系统的所有漏洞(Vulnerability)都应该管理起来，因为环境在变，新的威胁(Threat)随时可能出现。威胁分析的作用，就是为决策者判断哪些系统漏洞需要优先解决提供依据。</p>
+<blockquote>
+<p>Risk = Threat *Impact * Probability</p>
+</blockquote>
+<p><img src="/img/security_pg/risk.png" alt="risk"></p>
+<blockquote>
+<p>Threat Agent是Threat的制造者<br>Asset是Risk的承担者<br>Impact是Threat转变为现实后对Asset的影响<br>Attack是Threat Agent让Threat转变为现实产生Impact的方法（Threat materialize）<br>Probability是这种转变的难易程度或可能性<br>Vulnerability是导致Attack成功的Asset的某种内在属性<br>Risk Level(High/Middle/Low)使得我们可以为Risk制定合适的Safeguard</p>
+</blockquote>
+<h2 id="网络安全风险评估的步骤">网络安全风险评估的步骤</h2><p>网络安全风险评估可以在产品开发周期的前期和后期进行。</p>
+<p>前期进行主要为了做安全加固：</p>
+<p><strong>资产识别/系统分析 &gt; 威胁分析 &gt; 识别风险 &gt; 制定消减措施 &gt; 产品响应</strong></p>
+<p>后期进行主要为了做安全测试来检验安全效果(审计/稽核)：</p>
+<p><strong>资产识别/系统分析 &gt; 威胁分析 &gt; 安全测试设计 &gt; 安全测试执行 &gt; 安全问题定级 &gt; 制定消减措施 &gt; 产品响应</strong></p>
+<p><img src="/img/security_pg/threat.png" alt="threat"></p>
+<h2 id="资产识别/系统分析">资产识别/系统分析</h2><p>资产识别是指识别出被评估系统中的关键资产，也就是回答“需要保护什么？”这个问题。一般来书，一个系统的关键资产是这个系统的业务和数据，包括核心业务组件、用户的数据、用于鉴权和认证的密码、密钥等。</p>
+<p>系统分析是进行威胁分析的前提，只有充分了解被评估系统的功能、结构、业务流等信息后，威胁分析才有依据。系统分析也为漏洞识别提供需要的输入。系统分析的第一个步骤是了解系统及其所在的解决方案对外提供的业务功能，知道系统能够做什么，对被分析系统有一个High Level的感性认识，之后通过多个维度（viewpoint）对系统进行分解，最后通过业务流将各分解后的组件串联起来，实现“整体-局部-整体”的分析过程。需要注意的是，在进行系统分析前，必须根据项目的目的和限制条件对系统分析进行约束，否则，系统分析是分析不完的。</p>
+<p>下面举一个例子。笔者以前从事的一个Android指纹认证系统的解决方案级的安全评估（相关敏感信息已经删掉），做系统分析的时候，需要对整个业务有一个概括理解，并画出总体的系统架构图。这个指纹认证系统，涉及Android、Trustzone、APP客户端、APP后台等，有什么接口，如何交互，关键资产存储在哪里，都需要在图中分析出来：</p>
+<p><img src="/img/security_pg/system_analysis.png" alt="system_analysis"></p>
+<p>做完这种系统架构图后，再去根据业务场景或者系统组件来进行多维度的细化分析，方式五花八门，没有什么固定套路，只要分析清楚了就OK。一般来说，可以做以下的分析：</p>
+<blockquote>
+<p>系统的组网情况（处在什么位置/周边系统/…）<br>硬件架构分析（设备/单板/总线/CPU/…）<br>软件架构分析（OS/DB/Platform/Web后台/…）<br>内/外部接口分析（维护接口/业务接口/调试接口/…）<br>典型业务流程/场景分析（业务场景1/业务场景2/…）<br>管理/维护场景分析（近端维护场景/远程维护场景/…）<br>关键事件分析（登录/鉴权/认证/数据读写/…）</p>
+</blockquote>
+<h2 id="威胁分析">威胁分析</h2><p>学习如何做威胁分析之前，需要了解什么是威胁。</p>
+<p>Threat:<br>A set of potential incidents in which a threat agent causes a threat event to an asset using a specific entry point into the system</p>
+<p>那么一般来说有什么威胁呢？可以从安全三元组来理解：</p>
+<p>CIA（confidentiality, integrity, and availability），指“机密性”、“完整性”、“可用性”，加上“抗抵赖性”是需要确保的系统安全属性。</p>
+<p>威胁分类：</p>
+<blockquote>
+<p>•    对机密性的威胁<br>如Information Disclosure：通过嗅探、暴力破解等手段窃取用户身份，认证信息，仿冒合法用户访问系统。攻击者非法获得系统中保存的或传输过程中的机密数据，如用户认证信息、用户业务数据、系统代码等<br>•    对完整性的威胁<br>如Tampering with Data：通过修改发送给系统的数据或从系统收到的数据，影响系统业务逻辑，比如绕过认证机制、欺骗计费系统、执行越权操作等<br>•    对可用性的威胁<br>如Denial of Service：通过Flood、畸形报文等攻击等手段造成系统不能提供正常的服务<br>•    对抗抵赖性的威胁<br>通过修改系统访问日志、审计日志来隐藏攻击痕迹、修改业务行为记录</p>
+</blockquote>
+<p>威胁分析就是识别威胁，根据“威胁”的定义，实际上是要识别构成威胁的各组成部分，来总结出一个句子：</p>
+<p><strong>攻击者（威胁源），利用XXX漏洞（漏洞），通过XXX方式（攻击界面、攻击手段），对XXX（关键资产）产生了XXX威胁（后果）</strong></p>
+<p>说白了，这个阶段就是造句。</p>
+<p>但威胁分析是整个安全评估最难的环节，需要采用多种方法去YY有什么威胁、有什么可能性、有什么攻击面、外部攻击者如何攻击系统、内部攻击者(内鬼)如何攻击系统。</p>
+<p>虽说威胁分析套路很多，只要识别出威胁就可以，但业界也有一些比较成熟的建模，比如X.805分层分析、攻击树模型、微软的STRIDE威胁建模等。这里就不再详述，请自行google。</p>
+<p>这里给个STRIDE作为例子：</p>
+<p><img src="/img/security_pg/threat_analysis.png" alt="threat_analysis"></p>
+<p>分析完威胁，就要根据这些威胁点来进行安全测试。</p>
+<p>这里就有很多领域，比如web安全(前端+后端)、Android/IOS安全、云安全等等</p>
+<p>(未完待续)</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/安全评估/">安全评估</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/blog/">blog</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2015/08/19/security-test/" data-title="浅谈网络安全风险评估(未完待续) | Colbert&#39;s blog" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/08/20/web-test1/" title="基于Struts框架的Web应用安全测试要点">
+  <strong>上一篇:</strong><br/>
+  <span>
+  基于Struts框架的Web应用安全测试要点</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/08/17/web-kaifa/"  title="web开发学习笔记(未完待续)">
+ <strong>下一篇:</strong><br/> 
+ <span>web开发学习笔记(未完待续)
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是网络安全风险评估"><span class="toc-number">1.</span> <span class="toc-text">什么是网络安全风险评估</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络安全风险评估的步骤"><span class="toc-number">2.</span> <span class="toc-text">网络安全风险评估的步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#资产识别/系统分析"><span class="toc-number">3.</span> <span class="toc-text">资产识别/系统分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#威胁分析"><span class="toc-number">4.</span> <span class="toc-text">威胁分析</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/blog/" title="blog">blog<sup>19</sup></a></li>
+		
+			<li><a href="/categories/blogs/" title="blogs">blogs<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Android安全/" title="Android安全">Android安全<sup>6</sup></a></li>
+		
+			<li><a href="/tags/ctf/" title="ctf">ctf<sup>1</sup></a></li>
+		
+			<li><a href="/tags/test/" title="test">test<sup>1</sup></a></li>
+		
+			<li><a href="/tags/web安全/" title="web安全">web安全<sup>1</sup></a></li>
+		
+			<li><a href="/tags/web开发/" title="web开发">web开发<sup>1</sup></a></li>
+		
+			<li><a href="/tags/业务分析/" title="业务分析">业务分析<sup>1</sup></a></li>
+		
+			<li><a href="/tags/安全笔记/" title="安全笔记">安全笔记<sup>1</sup></a></li>
+		
+			<li><a href="/tags/安全评估/" title="安全评估">安全评估<sup>1</sup></a></li>
+		
+			<li><a href="/tags/小工具/" title="小工具">小工具<sup>1</sup></a></li>
+		
+			<li><a href="/tags/微信后台/" title="微信后台">微信后台<sup>1</sup></a></li>
+		
+			<li><a href="/tags/树莓派/" title="树莓派">树莓派<sup>1</sup></a></li>
+		
+			<li><a href="/tags/随笔/" title="随笔">随笔<sup>3</sup></a></li>
+		
+			<li><a href="/tags/风控/" title="风控">风控<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello , I&#39;m Colbert337 <br/>
+			原谅我这一生不羁放纵爱自由.</p>
+	</section>
+	 
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="Colbert337">Colbert337</a>
+		
+		</p>
+</div></footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+  </body>
+</html>

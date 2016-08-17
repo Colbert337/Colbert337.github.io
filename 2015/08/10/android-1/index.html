@@ -1,0 +1,382 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>菜鸟如何学习Android安全 | Colbert&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="Colbert337">
+    
+    <meta name="description" content="扣吧力作，欢迎转载，转载请注明来自colbert337.github.io
+Android安全是一个很大的课题，也是非常热门的话题。Android的开源和碎片化两个因素，决定了Android安全在攻防两端都大有可为，面对高度定制化的海量Android平台产品，漏洞往往层出不穷。
+笔者觉得菜鸟（初学者">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Colbert&#39;s blog" title="Colbert&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Colbert&#39;s blog">Colbert&#39;s blog</a></h1>
+				<h2 class="blog-motto">扣吧的移动城堡</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">主页 | Home</a></li>
+					
+						<li><a href="/archives">归档 | Archives</a></li>
+					
+						<li><a href="/novel">小说 | Novel</a></li>
+					
+						<li><a href="/about">简介 | About</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/08/10/android-1/" title="菜鸟如何学习Android安全" itemprop="url">菜鸟如何学习Android安全</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="Colbert337">Colbert337</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-08-10T14:16:23.000Z" itemprop="datePublished">2015-08-10</time>
+    更新日期:<time datetime="2015-08-14T16:06:58.000Z" itemprop="dateModified">2015-08-15</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+		</div>
+		
+		<p>扣吧力作，欢迎转载，转载请注明来自colbert337.github.io</p>
+<p>Android安全是一个很大的课题，也是非常热门的话题。Android的开源和碎片化两个因素，决定了Android安全在攻防两端都大有可为，面对高度定制化的海量Android平台产品，漏洞往往层出不穷。</p>
+<p>笔者觉得菜鸟（初学者）可以按照以下顺序去学习Android安全（默认菜鸟已经有网络安全基础，如安全评估方法论、密码学等）：<br>一、先学Android基础和Android开发<br>1）Android系统学习<br>2）Android开发环境搭建<br>3）Android应用开发（JAVA）<br>4）Android NDK开发（C/C++）</p>
+<p>二、再学Android应用层安全<br>1）Android应用安全<br>2）Android数据安全</p>
+<p>三、再学Android系统层安全<br>1）Android系统层安全(Framework)<br>2) Android系统层安全（Native）<br>3）Android系统层安全(kernal)</p>
+<p>以上内容学习的同时，还可以根据兴趣选择性的以下几个方面加强（不分顺序）：<br>1) Android应用逆向<br>2）ARM/MIPS反汇编<br>3）应用服务端安全（web安全）<br>4）Android/Linux驱动开发<br>5）Android系统源码编译<br>6）Android root技术<br>7) CP侧（Moderm）安全<br>8) 启动和升级（fastboot）安全</p>
+<p>此外，为了提高攻防技术，还可以在以下几个方面去努力：<br>1）漏洞挖掘用例化<br>2）分析业界漏洞，总结出漏洞库<br>3）分析业界POC，总结出攻击模式库<br>4）在漏洞挖掘的过程，尝试总结某种类型漏洞的特点，输出自动化漏洞挖掘工具<br>5）在漏洞利用的过程，尝试总结某种利用方式的特点，输出自动化漏洞利用工具</p>
+<p>最后，有条件的多参会跟业界大牛接触，没条件的多读Android源码，多折腾设备，很快就可以从菜鸟成为大牛。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Android安全/">Android安全</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/blog/">blog</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2015/08/10/android-1/" data-title="菜鸟如何学习Android安全 | Colbert&#39;s blog" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/08/11/antidebug/" title="一种常用的Android NDK对抗so动态调试方法">
+  <strong>上一篇:</strong><br/>
+  <span>
+  一种常用的Android NDK对抗so动态调试方法</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/08/09/my-new-post/"  title="关于扣吧的移动城堡">
+ <strong>下一篇:</strong><br/> 
+ <span>关于扣吧的移动城堡
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/blog/" title="blog">blog<sup>19</sup></a></li>
+		
+			<li><a href="/categories/blogs/" title="blogs">blogs<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Android安全/" title="Android安全">Android安全<sup>6</sup></a></li>
+		
+			<li><a href="/tags/ctf/" title="ctf">ctf<sup>1</sup></a></li>
+		
+			<li><a href="/tags/test/" title="test">test<sup>1</sup></a></li>
+		
+			<li><a href="/tags/web安全/" title="web安全">web安全<sup>1</sup></a></li>
+		
+			<li><a href="/tags/web开发/" title="web开发">web开发<sup>1</sup></a></li>
+		
+			<li><a href="/tags/业务分析/" title="业务分析">业务分析<sup>1</sup></a></li>
+		
+			<li><a href="/tags/安全笔记/" title="安全笔记">安全笔记<sup>1</sup></a></li>
+		
+			<li><a href="/tags/安全评估/" title="安全评估">安全评估<sup>1</sup></a></li>
+		
+			<li><a href="/tags/小工具/" title="小工具">小工具<sup>1</sup></a></li>
+		
+			<li><a href="/tags/微信后台/" title="微信后台">微信后台<sup>1</sup></a></li>
+		
+			<li><a href="/tags/树莓派/" title="树莓派">树莓派<sup>1</sup></a></li>
+		
+			<li><a href="/tags/随笔/" title="随笔">随笔<sup>3</sup></a></li>
+		
+			<li><a href="/tags/风控/" title="风控">风控<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello , I&#39;m Colbert337 <br/>
+			原谅我这一生不羁放纵爱自由.</p>
+	</section>
+	 
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="Colbert337">Colbert337</a>
+		
+		</p>
+</div></footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+  </body>
+</html>

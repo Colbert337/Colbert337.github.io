@@ -1,0 +1,389 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>web开发学习笔记(未完待续) | Colbert&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="Colbert337">
+    
+    <meta name="description" content="学web安全，要先从web开发入手，以下学习笔记摘录自《Java Web 整合开发完全自学手册》(机械出版社)/《Java Web开发详解——XML+XSLT+Servlet+JSP》孙鑫(电子工业出版社)/《Java开发实战经典——基础篇》张兴华(清华大学出版社)/Jackal@HW_ICSL
+第">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Colbert&#39;s blog" title="Colbert&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Colbert&#39;s blog">Colbert&#39;s blog</a></h1>
+				<h2 class="blog-motto">扣吧的移动城堡</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">主页 | Home</a></li>
+					
+						<li><a href="/archives">归档 | Archives</a></li>
+					
+						<li><a href="/novel">小说 | Novel</a></li>
+					
+						<li><a href="/about">简介 | About</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/08/17/web-kaifa/" title="web开发学习笔记(未完待续)" itemprop="url">web开发学习笔记(未完待续)</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="Colbert337">Colbert337</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-08-17T15:07:27.000Z" itemprop="datePublished">2015-08-17</time>
+    更新日期:<time datetime="2015-08-30T11:54:52.000Z" itemprop="dateModified">2015-08-30</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一篇_Java开发Web应用"><span class="toc-number">1.</span> <span class="toc-text">第一篇 Java开发Web应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Web应用的发展"><span class="toc-number">1.1.</span> <span class="toc-text">Web应用的发展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#学习JSP"><span class="toc-number">1.2.</span> <span class="toc-text">学习JSP</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#杂篇"><span class="toc-number">2.</span> <span class="toc-text">杂篇</span></a></li></ol>
+		</div>
+		
+		<p>学web安全，要先从web开发入手，以下学习笔记摘录自《Java Web 整合开发完全自学手册》(机械出版社)/《Java Web开发详解——XML+XSLT+Servlet+JSP》孙鑫(电子工业出版社)/《Java开发实战经典——基础篇》张兴华(清华大学出版社)/Jackal@HW_ICSL</p>
+<h2 id="第一篇_Java开发Web应用">第一篇 Java开发Web应用</h2><h3 id="Web应用的发展">Web应用的发展</h3><p>1.静态页面：HTML网页<br>2.动态页面的鼻祖：CGI<br>3.微软开发的代替CGI脚本程序的一种应用：ASP和ASP.NET<br>4.草根中走出来的巨人：PHP<br>5.来自JAVA的阵营：JSP和J2EE<br>6.模型-视图-控制器：MVC<br>7.Ajax</p>
+<h3 id="学习JSP">学习JSP</h3><h2 id="杂篇">杂篇</h2><p>SSH，就是Strusts+Spring+Hibernate</p>
+<p>SSI，就是Strusts+Spring+iBATIS</p>
+<p>Apache是web server，配置文件是httpd.conf<br>Tomcat是web容器(servlet)，配置文件是sever.xml<br>web应用的配置文件是web.xml<br>struts的配置文件是*.struts.xml</p>
+<p>最早的Web是以静态Web出现的，用户在浏览器中输入网址将请求通过HTTP协议传送到Web服务器上，服务器会根据用户的请求找到相应的网页文件(*.html)，接着再通过HTTP协议传回到客户浏览器上进行显示</p>
+<p><img src="/img/webkaifa/jingtai.png" alt="jingtai"></p>
+<p>动态Web流程：所有请求不再直接提交给Web服务器，而是通过Web服务插件进行接收，此插件的主要目的是用于区分用户所发出的请求是动态请求还是静态请求。如果用户发出的是静态请求，则会将用户请求交给Web服务器，并通过文件系统将用户所需要的资源发回给客户端浏览器，这一点与最初的静态Web处理流程完全一样；但如果此时的请求是动态请求，则会将所有请求交给Web容器进行处理，在Web容器中将会采用拼凑代码的形式(主要是拼凑HTML)动态地生成数据并通过Web服务器发回给客户端浏览器。</p>
+<p><img src="/img/webkaifa/dongtai.png" alt="dongtai"></p>
+<p>静态Web与动态Web最本质的区别：静态Web无法进行数据库操作，动态Web可以进行数据库操作。</p>
+<p>Tomcat中的server.xml的配置：</p>
+<p>Connector表示客户端和service之间的连接，其中port 指定服务器端要创建的端口号，并在这个端口监听来自客户端的请求 ，例如：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">Connector</span> <span class="attribute">port</span>=<span class="value">"8080"</span> <span class="attribute">protocol</span>=<span class="value">"HTTP/1.1"</span></span><br><span class="line">           <span class="attribute">connectionTimeout</span>=<span class="value">"20000"</span></span><br><span class="line">           <span class="attribute">redirectPort</span>=<span class="value">"8443"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">Connector</span> <span class="attribute">port</span>=<span class="value">"8009"</span> <span class="attribute">protocol</span>=<span class="value">"AJP/1.3"</span> <span class="attribute">redirectPort</span>=<span class="value">"8443"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Host表示一个虚拟主机，其中name指定主机名 ，appBase 应用程序基本目录，即存放应用程序的目录(它将请求url与该虚拟主机的context进行匹配，并把请求转给对应的context来处理)，unpackWARs如果为true，则tomcat会自动将WAR文件解压，否则不解压，直接从WAR文件中运行应用程序 ，autoDeploy默认为true，表示如果有新的WEB应用放入appBase并且Tomcat在运行的情况下，自动载入应用，例如:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">Host</span> <span class="attribute">name</span>=<span class="value">"localhost"</span>  <span class="attribute">appBase</span>=<span class="value">"webapps"</span></span><br><span class="line">      <span class="attribute">unpackWARs</span>=<span class="value">"true"</span> <span class="attribute">autoDeploy</span>=<span class="value">"true"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>(未完待续)</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/web开发/">web开发</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/blog/">blog</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2015/08/17/web-kaifa/" data-title="web开发学习笔记(未完待续) | Colbert&#39;s blog" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/08/19/security-test/" title="浅谈网络安全风险评估(未完待续)">
+  <strong>上一篇:</strong><br/>
+  <span>
+  浅谈网络安全风险评估(未完待续)</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/08/14/stagefright-covr/"  title="15分钟看懂Android stagefright漏洞(以两枚MPEG4_covr漏洞为例)">
+ <strong>下一篇:</strong><br/> 
+ <span>15分钟看懂Android stagefright漏洞(以两枚MPEG4_covr漏洞为例)
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一篇_Java开发Web应用"><span class="toc-number">1.</span> <span class="toc-text">第一篇 Java开发Web应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Web应用的发展"><span class="toc-number">1.1.</span> <span class="toc-text">Web应用的发展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#学习JSP"><span class="toc-number">1.2.</span> <span class="toc-text">学习JSP</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#杂篇"><span class="toc-number">2.</span> <span class="toc-text">杂篇</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/blog/" title="blog">blog<sup>19</sup></a></li>
+		
+			<li><a href="/categories/blogs/" title="blogs">blogs<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Android安全/" title="Android安全">Android安全<sup>6</sup></a></li>
+		
+			<li><a href="/tags/ctf/" title="ctf">ctf<sup>1</sup></a></li>
+		
+			<li><a href="/tags/test/" title="test">test<sup>1</sup></a></li>
+		
+			<li><a href="/tags/web安全/" title="web安全">web安全<sup>1</sup></a></li>
+		
+			<li><a href="/tags/web开发/" title="web开发">web开发<sup>1</sup></a></li>
+		
+			<li><a href="/tags/业务分析/" title="业务分析">业务分析<sup>1</sup></a></li>
+		
+			<li><a href="/tags/安全笔记/" title="安全笔记">安全笔记<sup>1</sup></a></li>
+		
+			<li><a href="/tags/安全评估/" title="安全评估">安全评估<sup>1</sup></a></li>
+		
+			<li><a href="/tags/小工具/" title="小工具">小工具<sup>1</sup></a></li>
+		
+			<li><a href="/tags/微信后台/" title="微信后台">微信后台<sup>1</sup></a></li>
+		
+			<li><a href="/tags/树莓派/" title="树莓派">树莓派<sup>1</sup></a></li>
+		
+			<li><a href="/tags/随笔/" title="随笔">随笔<sup>3</sup></a></li>
+		
+			<li><a href="/tags/风控/" title="风控">风控<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello , I&#39;m Colbert337 <br/>
+			原谅我这一生不羁放纵爱自由.</p>
+	</section>
+	 
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="Colbert337">Colbert337</a>
+		
+		</p>
+</div></footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+  </body>
+</html>

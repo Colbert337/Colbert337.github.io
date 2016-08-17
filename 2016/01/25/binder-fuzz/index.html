@@ -1,0 +1,493 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>农民斗地主——Binder fuzz安全研究 | Colbert&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="Colbert337">
+    
+    <meta name="description" content="扣吧力作，欢迎转载，转载请注明来自colbert337.github.io
+最近扣吧忙成狗了，好久没更新博客，对不住大家了，今天趁天气暖和点，来一篇干货。
+由于好久没搞Android了，写得不专业的地方，请见谅哈。
+0.为什么要研究Binder fuzz以目前最热门的指纹方案为例。
+
+
+TZ：Tru">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Colbert&#39;s blog" title="Colbert&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Colbert&#39;s blog">Colbert&#39;s blog</a></h1>
+				<h2 class="blog-motto">扣吧的移动城堡</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">主页 | Home</a></li>
+					
+						<li><a href="/archives">归档 | Archives</a></li>
+					
+						<li><a href="/novel">小说 | Novel</a></li>
+					
+						<li><a href="/about">简介 | About</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/01/25/binder-fuzz/" title="农民斗地主——Binder fuzz安全研究" itemprop="url">农民斗地主——Binder fuzz安全研究</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="Colbert337">Colbert337</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-01-25T15:45:23.000Z" itemprop="datePublished">2016-01-25</time>
+    更新日期:<time datetime="2016-01-30T04:43:13.582Z" itemprop="dateModified">2016-01-30</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-为什么要研究Binder_fuzz"><span class="toc-number">1.</span> <span class="toc-text">0.为什么要研究Binder fuzz</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-什么是Binder(有基础的可以略过这一部分)"><span class="toc-number">2.</span> <span class="toc-text">1.什么是Binder(有基础的可以略过这一部分)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Binder_fuzz怎么作"><span class="toc-number">3.</span> <span class="toc-text">2.Binder fuzz怎么作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1）如何取得服务的IBinder对象？"><span class="toc-number">3.1.</span> <span class="toc-text">1）如何取得服务的IBinder对象？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2）code如何生成？"><span class="toc-number">3.2.</span> <span class="toc-text">2）code如何生成？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3）data如何构造？"><span class="toc-number">3.3.</span> <span class="toc-text">3）data如何构造？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4）fuzz系统和逻辑怎么设计？"><span class="toc-number">3.4.</span> <span class="toc-text">4）fuzz系统和逻辑怎么设计？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5）如何判断fuzz结果和识别安全漏洞？"><span class="toc-number">3.5.</span> <span class="toc-text">5）如何判断fuzz结果和识别安全漏洞？</span></a></li></ol></li></ol>
+		</div>
+		
+		<p>扣吧力作，欢迎转载，转载请注明来自colbert337.github.io</p>
+<p>最近扣吧忙成狗了，好久没更新博客，对不住大家了，今天趁天气暖和点，来一篇干货。</p>
+<p>由于好久没搞Android了，写得不专业的地方，请见谅哈。</p>
+<h1 id="0-为什么要研究Binder_fuzz">0.为什么要研究Binder fuzz</h1><p>以目前最热门的指纹方案为例。</p>
+<p><img src="/img/binderfuzz/soter.png" alt="soter"></p>
+<blockquote>
+<p>TZ：Trustzone(请自行百度)<br>CA：Trustzone框架中的Clinet App<br>TA：Trustzone框架中的Trustzone APP</p>
+</blockquote>
+<p>上层APP通过Binder机制调用keystore和FingerprintService两个底层系统服务，来获取密钥存储和指纹的能力。底层服务再通过CA跟TZ驱动通信，调用TZ中TA提供的服务，如指纹识别等安全性要求较高的服务。</p>
+<p>我们今天只看Android侧的Binder体系。</p>
+<p>Binder其实是提供了一种进程间通信（IPC）的功能。这些系统服务，通过binder协议抽象出一个个的“接口”，供其他进程调用，是一个重要的潜在的攻击面。如果没有做好权限控制，会让低权限的第三方应用/病毒/木马利用，后果不堪设想。</p>
+<p>其次，做Android的同学都知道，Binder是android一个非常重要的机制，夸张一点可以说是“Android的灵魂”，非常有必要进行细致的分析和漏洞挖掘。</p>
+<p>插播一个扣吧总结的知识点，系统服务的分类</p>
+<blockquote>
+<p>1.Binder体系的java服务(有Stub接口，也就是AIDL封装)<br>2.Binder体系的Native服务<br>3.socket体系的init服务（通常见于init.rc）<br>4.其他服务</p>
+</blockquote>
+<p>OK，再谈谈为什么使用fuzz技术呢？</p>
+<p>总的来说，是因为fuzz在协议和接口安全测试中比较简单粗暴，试错成本低。所以，“不管什么接口，先fuzz一把看看”。</p>
+<p>Fuzzing是一种基于缺陷注入的自动软件测试技术。通过编写fuzzer工具向目标程序提供某种形式的输入并观察其响应来发现问题，这种输入可以是完全随机的或精心构造的。Fuzzing测试通常以大小相关的部分、字符串、标志字符串开始或结束的二进制块等为重点，使用边界值附近的值对目标进行测试。</p>
+<p>主要有两种类型的fuzzing技术 ：</p>
+<p>1）dumb fuzzing 这种测试无需了解协议或文件本身格式，通过提供完全随机的输入或简单改变某些字节去发现问题。这种方法实现起来较简单，容易快速触发错误，但它的完全随机性会导致产生大量无效的输入或格式。</p>
+<p>2）Intelligent fuzzing 研究目标应用程序的协议或文件格式、功能配置，了解各类漏洞的成因，有目的地编写fuzzer。编写有效的fuzzer需要花费时间，但能够对某些感兴趣的部分集中测试，因此更有效。</p>
+<h1 id="1-什么是Binder(有基础的可以略过这一部分)">1.什么是Binder(有基础的可以略过这一部分)</h1><p>Android系统采用Binder机制作为进程间通信机制，类似于COM和CORBA分布式组件架构，通俗来讲其实就是提供远程过程调用（RPC）功能。</p>
+<p>在Binder机制中，由Client、Server、ServiceManger、Binder驱动这四个部分组成，其中Client、Server、ServiceManager运行在用户空间，Binder驱动运行在内核空间。Binder就是把这四个组件粘合在一起的粘合剂，核心组件是Binder驱动，ServiceManager提供了辅助管理的功能。Client和Server正是在Binder驱动和ServiceManager提供的基础设施上，进行CS通信。</p>
+<p><img src="/img/binderfuzz/binderipc.png" alt="binderipc"></p>
+<p>下面这个流程图可以简单说明Client通过binder调用Server的一个过程，Client会通过Proxy（这里的Proxy不是单一实体，实际上是一系列的BpInterface、BpBinder等代理组件）去跟binder驱动通信，Proxy把数据打包成parcel类型数据再进行传输。</p>
+<p><img src="/img/binderfuzz/binderproxy.png" alt="binderproxy"></p>
+<p>那么数据具体是怎么传输的呢？</p>
+<p>我们继续深究一下，笔者总结了一个比较全的图。Java层服务其实也是在Native层服务BpBinder和BBinder的一个封装。如果屏蔽底层驱动来看，整个Binder代理的核心就是BpBinder和BBinder。</p>
+<p><img src="/img/binderfuzz/binderall.png" alt="binderall"></p>
+<p>其中，BpBinder最重要的职责就是实现跨进程传输的传输机制，至于具体传输的是什么语义，它并不关心。我们观察它的transact()函数的参数，可以看到所有的语义都被打包成Parcel类型数据。（Parcel是轻量级的高效的对象序列化和反序列化机制，Android在Java空间和C++都实现了Parcel，由于它在C/C++中，直接使用了内存来读取数据，因此，它更有效率）</p>
+<p>请记住这个伟大的函数——transact()</p>
+<p><img src="/img/binderfuzz/transact.png" alt="transact"></p>
+<p>举一个例子：上层APP调用MediaRecorder对外提供的API，名字叫setCamera，实际上是执行了BpMediaRecorder中的setCamera方法中，remote()返回的就是BpBinder对象，这里会组装好parcel数据包，会传给BpBinder的transact函数。transact函数就会把数据发给对端，也就是另一个BBinder对象。</p>
+<p><img src="/img/binderfuzz/setCamera.png" alt="setCamera"></p>
+<p>我们看一下具体是如何发送数据？</p>
+<p>BpBinder的transact函数，通过层层调用，最终通过ioctl和binder驱动通信</p>
+<p><img src="/img/binderfuzz/binderioctl.png" alt="binderioctl"></p>
+<p>嗯，上述的就是发送请求的过程。</p>
+<p>下面来看接收方，Binder远程通信的目标端实体必须继承于BBinder类，该类和BpBinder相对，主要关心的只是传输方面的东西，不太关心所传输的语义。当收到回复后，会执行IPCTHreadState::waitForRespaonse函数的逻辑，并执行executeCommand(cmd)</p>
+<p><img src="/img/binderfuzz/executeCommand.png" alt="executeCommand"></p>
+<p>executeCommand中，会取得一个合法的BBinder对象，并执行BBinder的transact函数。<br>（是不是有点奇怪，BBinder也有一个transact函数，请继续往下看吧）</p>
+<p><img src="/img/binderfuzz/BBinder.png" alt="BBinder"></p>
+<p>BBinder::transact中会调用onTransact，这个onTransact才是真正处理业务的。需要注意的是，因为我们的binder实体在本质上都是继承于BBinder的，而且我们一般都会重载onTransact()函数，所以上面的onTransact()实际上调用的是具体binder实体的onTransact()成员函数。也就是说，onTransact的具体实现一般在上层的binder实体，而不在BBinder。</p>
+<p><img src="/img/binderfuzz/onTransact.png" alt="onTransact"></p>
+<p>上面说了，BBinder没有实现一个默认的onTransact()成员函数，所以在远程通信时，BBinder::transact()调用的onTransact()其实是Bnxxx或者BnInterface的某个子类的onTransact()成员函数，举个例子，BnMediaRecorder中实现了一个onTransact函数，通过switch-case，根据不同code进行分发处理。</p>
+<p><img src="/img/binderfuzz/BnMediaRecorder.png" alt="BnMediaRecorder"></p>
+<p>switch（code）中的code，其实就是前面说的BpBinder中transact函数传过来的int型的方法号。</p>
+<h1 id="2-Binder_fuzz怎么作">2.Binder fuzz怎么作</h1><p>经过上面的分析，我们已经对Binder有个全局的了解。fuzz的关键是选择好fuzz的目标和fuzz切入点（接口），那么应该如何选择呢？</p>
+<p>思路就是农民斗地主！</p>
+<p>前面也说了，系统服务（地主）具有高权限，是我们需要重点关注的对象，而低权限进程（农民）可以利用binder call去调用系统服务，从低权限到高权限，存在一个跨安全域的数据流，这里就是一个典型的攻击界面。所以，我们选择系统服务作为fuzz的目标。</p>
+<p><img src="/img/binderfuzz/binderfuzz1.png" alt="binderfuzz1"></p>
+<p>那么Fuzz接口呢？选择fuzz接口需要满足这几个要求：</p>
+<blockquote>
+<p>1）这个接口是开放的，是可以被低权限进程调用的<br>2）这个接口距离fuzz目标（系统服务）比较接近，中间路径最好透传，这样比较容易分析异常<br>3）从简原则</p>
+</blockquote>
+<p>根据上面的分析，BpBinder中的transact函数就是一个很好的fuzz接口，但这货在底层无法直接调用。</p>
+<p>怎么办呢？</p>
+<p>我们从BpBinder往上层找，很容易发现，Java层IBinder的transact函数最终调用到BpBinder，且参数是原封不动的“透传”到底层，考虑到java层的可视化和扩展性，我决定选择IBinder的公有方法transact作为fuzz接口。</p>
+<p>下图就是这个接口的定义：</p>
+<p><img src="/img/binderfuzz/fuzzapi.png" alt="fuzzapi"></p>
+<p>请大家认真看看上图注释的说明：</p>
+<blockquote>
+<p>code是int类型，指定了服务方法号<br>data是parcel类型，是发送的数据，满足binder协议规则，下面会有详述<br>reply也是parcel类型，是通信结束后返回的数据<br>flag是标记位，0为普通RPC，需要等待，调用发起后处于阻塞状态直到接收到返回，1为one-way RPC，表示“不需要等待回复的”事务，一般为无返回值的单向调用。</p>
+</blockquote>
+<p>下面开始讲重点了，额。</p>
+<p>接口不是你想fuzz就能fuzz。我们来解决几个关键问题：</p>
+<h2 id="1）如何取得服务的IBinder对象？">1）如何取得服务的IBinder对象？</h2><p>我们要取到对端的IBinder对象，才可以调用这个服务。系统其实有一些隐藏API可以利用。先通过反射出ServiceManager（hide属性）中的listServices获取所有运行的服务名称：</p>
+<p><img src="/img/binderfuzz/listService.png" alt="listService"></p>
+<p>获取到String类型的服务名称后，再反射getService获取对应的服务IBinder对象：</p>
+<p><img src="/img/binderfuzz/getService.png" alt="getService"></p>
+<p>是不是很犀利，其实是借用了上文说的ServiceManager的强大力量。</p>
+<h2 id="2）code如何生成？">2）code如何生成？</h2><p>code也称为TransactionID，标定了服务端方法号。</p>
+<p>每个服务对外定义的方法都会分配方法号，而且是有规律的，第一个服务方法code使用1，第二个是2，，第三个使用3，依次类推，如果有N个方法，就分别分配1-N个连续的服务号。</p>
+<p>有个小技巧，对于Java服务，必定有Stub类，可以通过反射出mInterfaceToken+”$Stub”类中所有成员属性，其中以”TRANSACTION_”开头的int型就是该方法对应的。</p>
+<p>如下图的例子，服务端greet方法对应的code就是TRANSACTION_greet：</p>
+<p><img src="/img/binderfuzz/aidlexample.png" alt="aidlexample"></p>
+<p>如果是Native服务，就比较悲剧了，目前还没有好的自动化方法直接获取code。一般服务方法数不会太多，所以确定一个上限如50，从1到50循环生成code就可以把所有方法遍历。当然可以通过人工逆向分析出code，但这样成本比较高。</p>
+<h2 id="3）data如何构造？">3）data如何构造？</h2><p>通过大量的源码review和分析得知，data由“RPC header+参数1+参数2+….”来构成的。</p>
+<p>举个例子，如下图，setDataSource这个API，首先调用data.writeInterfaceToken会写入一个RPC header，然后会依次写入调用方法的参数，比如setdataSource有3个参数，这里就会依次写入三个数据：</p>
+<p><img src="/img/binderfuzz/setDataSource.png" alt="setDataSource"></p>
+<p>是不是很有规律！！</p>
+<p>通过review writeInterfaceToken的实现，我们可以发现这个RPC header是由一个int型数据加上String类型的interface name来构成。</p>
+<p><img src="/img/binderfuzz/writeInterfaceToken.png" alt="writeInterfaceToken"></p>
+<p>但我们不需要自己去构造RPC header，直接调用writeInterfaceToken函数，传入interface name就可以了。最后抽象出来的parcel类型的data应该是这样的：</p>
+<p><img src="/img/binderfuzz/RPCheader.png" alt="RPCheader"></p>
+<p>那大家可能会问interface name是什么东西，如何获取？很简单，interface name是接口名称，只要取得IBinder对象，就可以直接getInterfaceDescriptor来获取interface name，也就是接口方法的描述符。</p>
+<p><img src="/img/binderfuzz/getInterfaceDescriptor.png" alt="getInterfaceDescriptor"></p>
+<p>再看如何获取一个方法的参数和类型呢？</p>
+<p>对于Java层服务的方法，可以通过反射获取method对象，然后用getParameterTypes获取所有的类型：</p>
+<p><img src="/img/binderfuzz/methodtpye.png" alt="methodtpye"></p>
+<p>对于native层服务，无法直接获取方法参数类型，可以用过review调用者实现和反编译分析等方法来作。</p>
+<h2 id="4）fuzz系统和逻辑怎么设计？">4）fuzz系统和逻辑怎么设计？</h2><p>直接上图吧。如下图，整个fuzz系统分为4个模块,分别是数据产生器，fuzz引擎，监视器和日志模块。</p>
+<p>1）数据产生器就是用上述方法产生transact需要用到的数据</p>
+<p>2）fuzz引擎用于执行具体的transact过程</p>
+<p>3）监视器用于监控fuzz结果和异常</p>
+<p>4）日志模块用于记录fuzz结果</p>
+<p><img src="/img/binderfuzz/fuzz.png" alt="fuzz"></p>
+<p>这里笔者采用了3种fuzz方法</p>
+<p>1）dumb fuzz：构造好RPC header后，直接塞入大量随机数据，code范围为1-100，比较暴力。</p>
+<p>2）intelligent fuzz：构造好RPC header后，精准识别出code，并根据不同的code构造出类型正确的随机参数</p>
+<p>3）simple fuzz：构造好RPC header后，精准识别出code，但每次请求只写入int类型“0”，通过返回值，快速识别fuzz目标的接口是否有权限校验</p>
+<h2 id="5）如何判断fuzz结果和识别安全漏洞？">5）如何判断fuzz结果和识别安全漏洞？</h2><p>一般来说，要做到“权限判断+数据有效性判断”两层防护才是安全的。</p>
+<p>通过监控transact的返回值和系统log和系统状态，可以看到的fuzz现象主要有以下几种：</p>
+<p>1）有SecurityException，则说明该接口有进行权限判断，做了一层防护</p>
+<p>2）无Exception，说明该接口没有进行权限校验，默认对外暴露，是不安全的，可以深挖</p>
+<p>3）异常现象，如系统重启、指纹服务挂死、屏幕无响应等，说明该接口不仅没有进行权限判断，而且fuzz数据导致了缓存区溢出/进程crash等异常，这类现象要再去进行人工分析，很有可能会严重的提权漏洞（比如root）</p>
+<p>举个例子，看看到底是哪里出现安全漏洞。下图，ontransact函数中switch-case结构里，其中一个case中没有对数据进行判断就读到*device_address，而这个指针直接当成参数直接使用，当指针地址异常就会引起系统服务进程crash，从而导致系统重启，是一个典型的拒绝服务漏洞。也就是说，任意一个低权限的进程可以随时进行攻击，导致系统重启。</p>
+<p><img src="/img/binderfuzz/cve.png" alt="cve"></p>
+<p>再举个例子，假设某手机厂家的系统指纹服务有个接口叫DeleteFingerPrint()，用于删除用户指纹，该服务的实现没有进行权限判断和参数校验，恶意攻击者就有可能构造参数，非法调用该服务的方法，把用户的指纹信息删除。</p>
+<p>重要的事情要说三遍！</p>
+<p>参数要做检查</p>
+<p>参数要做检查</p>
+<p>参数要做检查</p>
+<p>今天先写到这里，写得有点乱，后续再更新一下。如果你喜欢扣吧的文章，请多多留言支持~</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Android安全/">Android安全</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/blog/">blog</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/01/25/binder-fuzz/" data-title="农民斗地主——Binder fuzz安全研究 | Colbert&#39;s blog" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/02/07/zhicode/" title="独家首发-支付宝吱口令的秘密">
+  <strong>上一篇:</strong><br/>
+  <span>
+  独家首发-支付宝吱口令的秘密</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/10/22/raspberry/"  title="raspberry(树莓派)WIFI钓鱼攻略">
+ <strong>下一篇:</strong><br/> 
+ <span>raspberry(树莓派)WIFI钓鱼攻略
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-为什么要研究Binder_fuzz"><span class="toc-number">1.</span> <span class="toc-text">0.为什么要研究Binder fuzz</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-什么是Binder(有基础的可以略过这一部分)"><span class="toc-number">2.</span> <span class="toc-text">1.什么是Binder(有基础的可以略过这一部分)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Binder_fuzz怎么作"><span class="toc-number">3.</span> <span class="toc-text">2.Binder fuzz怎么作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1）如何取得服务的IBinder对象？"><span class="toc-number">3.1.</span> <span class="toc-text">1）如何取得服务的IBinder对象？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2）code如何生成？"><span class="toc-number">3.2.</span> <span class="toc-text">2）code如何生成？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3）data如何构造？"><span class="toc-number">3.3.</span> <span class="toc-text">3）data如何构造？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4）fuzz系统和逻辑怎么设计？"><span class="toc-number">3.4.</span> <span class="toc-text">4）fuzz系统和逻辑怎么设计？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5）如何判断fuzz结果和识别安全漏洞？"><span class="toc-number">3.5.</span> <span class="toc-text">5）如何判断fuzz结果和识别安全漏洞？</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/blog/" title="blog">blog<sup>19</sup></a></li>
+		
+			<li><a href="/categories/blogs/" title="blogs">blogs<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Android安全/" title="Android安全">Android安全<sup>6</sup></a></li>
+		
+			<li><a href="/tags/ctf/" title="ctf">ctf<sup>1</sup></a></li>
+		
+			<li><a href="/tags/test/" title="test">test<sup>1</sup></a></li>
+		
+			<li><a href="/tags/web安全/" title="web安全">web安全<sup>1</sup></a></li>
+		
+			<li><a href="/tags/web开发/" title="web开发">web开发<sup>1</sup></a></li>
+		
+			<li><a href="/tags/业务分析/" title="业务分析">业务分析<sup>1</sup></a></li>
+		
+			<li><a href="/tags/安全笔记/" title="安全笔记">安全笔记<sup>1</sup></a></li>
+		
+			<li><a href="/tags/安全评估/" title="安全评估">安全评估<sup>1</sup></a></li>
+		
+			<li><a href="/tags/小工具/" title="小工具">小工具<sup>1</sup></a></li>
+		
+			<li><a href="/tags/微信后台/" title="微信后台">微信后台<sup>1</sup></a></li>
+		
+			<li><a href="/tags/树莓派/" title="树莓派">树莓派<sup>1</sup></a></li>
+		
+			<li><a href="/tags/随笔/" title="随笔">随笔<sup>3</sup></a></li>
+		
+			<li><a href="/tags/风控/" title="风控">风控<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello , I&#39;m Colbert337 <br/>
+			原谅我这一生不羁放纵爱自由.</p>
+	</section>
+	 
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="Colbert337">Colbert337</a>
+		
+		</p>
+</div></footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+  </body>
+</html>

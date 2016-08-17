@@ -1,0 +1,404 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>TCTF线上赛 | Colbert&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="Colbert337">
+    
+    <meta name="description" content="这次TCTF线上赛为期三天，共40个队伍参赛，最后各队的分差还是有点大的。
+
+其中排第一队伍是隔壁老王，非常厉害。咱们队伍只有两人，连蒙带撞也进入了前十(^__^) 
+
+从题目分布来看，是标准的CTF题目分类，其中逆向和web的题目比较多。
+
+下面给大家分享几题。
+1.图片题，find the fl">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Colbert&#39;s blog" title="Colbert&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Colbert&#39;s blog">Colbert&#39;s blog</a></h1>
+				<h2 class="blog-motto">扣吧的移动城堡</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">主页 | Home</a></li>
+					
+						<li><a href="/archives">归档 | Archives</a></li>
+					
+						<li><a href="/novel">小说 | Novel</a></li>
+					
+						<li><a href="/about">简介 | About</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/06/29/tctf/" title="TCTF线上赛" itemprop="url">TCTF线上赛</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="Colbert337">Colbert337</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-06-29T07:40:03.000Z" itemprop="datePublished">2016-06-29</time>
+    更新日期:<time datetime="2016-06-29T10:08:44.976Z" itemprop="dateModified">2016-06-29</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+		</div>
+		
+		<p>这次TCTF线上赛为期三天，共40个队伍参赛，最后各队的分差还是有点大的。</p>
+<p><img src="/img/tctf/scoreboard.png" alt="tx"></p>
+<p>其中排第一队伍是隔壁老王，非常厉害。咱们队伍只有两人，连蒙带撞也进入了前十(<em>^__^</em>) </p>
+<p><img src="/img/tctf/score.png" alt="tx"></p>
+<p>从题目分布来看，是标准的CTF题目分类，其中逆向和web的题目比较多。</p>
+<p><img src="/img/tctf/ti.png" alt="tx"></p>
+<p>下面给大家分享几题。</p>
+<p>1.图片题，find the flag in the picture:</p>
+<p><img src="/img/tctf/stego.png" alt="tx"></p>
+<p>这题是典型的双图，跟ISG2014那题大同小异，也是利用双图中的差异来隐藏信息，只不过这题的flag藏得有点深。<br>大家可以先看下面这个解题思路，再自己尝试找出flag，提示:blue<br><a href="http://blog.sina.com.cn/s/blog_9cd8465f0102v6ok.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_9cd8465f0102v6ok.html</a></p>
+<p>2.逆向题welcome是ELF64逆向，可以用两种方法解决，一种是暴力破解，一种是优雅的数论知识，可以体会一下:</p>
+<p><a href="https://github.com/Colbert337/Colbert337.github.io/tree/master/img/tctf/welcome.tar.gz" target="_blank" rel="external">https://github.com/Colbert337/Colbert337.github.io/tree/master/img/tctf/welcome.tar.gz</a></p>
+<p>3.mobile题，提示是wormhole</p>
+<p><a href="https://github.com/Colbert337/Colbert337.github.io/tree/master/img/tctf/mobile2.rar" target="_blank" rel="external">https://github.com/Colbert337/Colbert337.github.io/tree/master/img/tctf/mobile2.rar</a></p>
+<p>4.web题array考察了一个PHP漏洞：</p>
+<p><img src="/img/tctf/php.png" alt="tx"></p>
+<p>这个漏洞信息可以参考这个博客：<br><a href="http://blog.evalbug.com/2015/11/10/different_arrays_compare_indentical_due_to_integer_key_truncation/" target="_blank" rel="external">http://blog.evalbug.com/2015/11/10/different_arrays_compare_indentical_due_to_integer_key_truncation/</a></p>
+<p>5.Hashcat考暴力破解：<br>MD5 ( “flag{X}” ) = 92b973442ff8935349c8bdba2214f06f<br>其中X是由小写字母组成的长度为8的字符串</p>
+<p>6.逆向题有一题MOV很恶心，可以感受一下：</p>
+<p><a href="https://github.com/Colbert337/Colbert337.github.io/tree/master/img/tctf/mov.tar.gz" target="_blank" rel="external">https://github.com/Colbert337/Colbert337.github.io/tree/master/img/tctf/mov.tar.gz</a></p>
+<p>在去年的recon大会中《The M/o/Vfuscator-Turning ‘mov’ into a soul-crushing RE nightmare》议题提出代码混淆的另一种方式，作者演示了所有的机器指令，除过控制流指令外，都用mov指令来实现。</p>
+<p>参考这个paper：<br><a href="http://www.cl.cam.ac.uk/~sd601/papers/mov.pdf" target="_blank" rel="external">http://www.cl.cam.ac.uk/~sd601/papers/mov.pdf</a></p>
+<p>和这个工具：<br><a href="https://github.com/xoreaxeaxeax/movfuscator" target="_blank" rel="external">https://github.com/xoreaxeaxeax/movfuscator</a></p>
+<p>其他题目还有考察选择明文攻击、溢出+shellcode+ROP、x-forward-for等，不一一列出了。</p>
+<p>CTF还是挺好玩的，大家都可以尝试去参与一下：)</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/ctf/">ctf</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/blogs/">blogs</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/06/29/tctf/" data-title="TCTF线上赛 | Colbert&#39;s blog" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/08/17/hello-world/" title="Hello World">
+  <strong>上一篇:</strong><br/>
+  <span>
+  Hello World</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/06/16/bank-sec/"  title="读书笔记-商业银行信息系统研发风险管控">
+ <strong>下一篇:</strong><br/> 
+ <span>读书笔记-商业银行信息系统研发风险管控
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/blog/" title="blog">blog<sup>19</sup></a></li>
+		
+			<li><a href="/categories/blogs/" title="blogs">blogs<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Android安全/" title="Android安全">Android安全<sup>6</sup></a></li>
+		
+			<li><a href="/tags/ctf/" title="ctf">ctf<sup>1</sup></a></li>
+		
+			<li><a href="/tags/test/" title="test">test<sup>1</sup></a></li>
+		
+			<li><a href="/tags/web安全/" title="web安全">web安全<sup>1</sup></a></li>
+		
+			<li><a href="/tags/web开发/" title="web开发">web开发<sup>1</sup></a></li>
+		
+			<li><a href="/tags/业务分析/" title="业务分析">业务分析<sup>1</sup></a></li>
+		
+			<li><a href="/tags/安全笔记/" title="安全笔记">安全笔记<sup>1</sup></a></li>
+		
+			<li><a href="/tags/安全评估/" title="安全评估">安全评估<sup>1</sup></a></li>
+		
+			<li><a href="/tags/小工具/" title="小工具">小工具<sup>1</sup></a></li>
+		
+			<li><a href="/tags/微信后台/" title="微信后台">微信后台<sup>1</sup></a></li>
+		
+			<li><a href="/tags/树莓派/" title="树莓派">树莓派<sup>1</sup></a></li>
+		
+			<li><a href="/tags/随笔/" title="随笔">随笔<sup>3</sup></a></li>
+		
+			<li><a href="/tags/风控/" title="风控">风控<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello , I&#39;m Colbert337 <br/>
+			原谅我这一生不羁放纵爱自由.</p>
+	</section>
+	 
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="Colbert337">Colbert337</a>
+		
+		</p>
+</div></footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+  </body>
+</html>
