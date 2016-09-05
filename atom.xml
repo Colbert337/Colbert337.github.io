@@ -5,7 +5,7 @@
   <subtitle><![CDATA[扣吧的移动城堡]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com//"/>
-  <updated>2016-08-23T13:51:46.548Z</updated>
+  <updated>2016-09-05T08:45:28.630Z</updated>
   <id>http://yoursite.com//</id>
   
   <author>
@@ -20,14 +20,16 @@
     <link href="http://yoursite.com/2016/08/23/access-control/"/>
     <id>http://yoursite.com/2016/08/23/access-control/</id>
     <published>2016-08-23T12:14:33.000Z</published>
-    <updated>2016-08-23T13:51:46.548Z</updated>
+    <updated>2016-09-05T08:45:28.630Z</updated>
     <content type="html"><![CDATA[<p>知识提纲：<br>身份标识方法和技术<br>身份验证方法、模型和技术<br>自主访问控制、强制访问控制和非自主访问控制<br>可问责性、监控和审计实践<br>发射安全和技术<br>入侵检测系统<br>访问控制实践和技术中可能遇到的安全威胁</p>
 <p>访问控制是一种安全手段，控制用户和系统如何和其他系统和资源进行通信和交互。</p>
 <p>访问是在主体和客体之间进行的信息流动。主体是一个主动的实体，它请求对客体或客体的数据进行访问。</p>
 <p>一般来说，主体访问客体的步骤是：<br>1.身份标识<br>2.身份验证<br>3.授权<br>4.访问资源<br>5.可问责性</p>
+<p><img src="/img/cissp1/ac.png" alt="access_control"></p>
 <p>这个人是他所宣称的哪个人吗？这个人是谁？如何进行身份标识和验证呢？</p>
 <p>一般来说，有3种因素能够用于身份验证：<br>1.“某人知道的内容（根据知识进行身份验证）”：密码、PIN、预留问题（母亲姓氏）<br>2.“某人所拥有的物品（根据所有权进行身份有验证）”：钥匙、门卡、访问卡、证件、票据<br>3.“某人的身份（根据特征进行身份验证）”：生物特征、物理特征</p>
 <p>强身份验证包括3种身份验证方式中的两种，创建或者发布安全身份应当包含3个关键点：唯一性、非描述性和签发。</p>
+<p>唯一性：每个用户必须具有有用于问责的唯一ID<br>非描述性：任何凭证都应当不表明账户的目的<br>签发：这些元素由另一个权威机构提供，用于证明身份</p>
 <p>未完待续</p>
 ]]></content>
     <summary type="html">
@@ -129,11 +131,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[TCTF线上赛]]></title>
+    <title><![CDATA[TCTF]]></title>
     <link href="http://yoursite.com/2016/06/29/tctf/"/>
     <id>http://yoursite.com/2016/06/29/tctf/</id>
     <published>2016-06-29T07:40:03.000Z</published>
-    <updated>2016-08-23T11:55:38.341Z</updated>
+    <updated>2016-09-05T01:17:50.379Z</updated>
     <content type="html"><![CDATA[<p>更新：咱们papapa线下决赛拿亚军，最后一小时暴击3题目，好给力！</p>
 <p><img src="/img/tctf/score2.png" alt="tx1"></p>
 <p>晒晒奖金和奖品，奖品是Keen Team的队服，很赞</p>
