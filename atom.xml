@@ -5,7 +5,7 @@
   <subtitle><![CDATA[扣吧的移动城堡]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com//"/>
-  <updated>2016-09-05T08:45:28.630Z</updated>
+  <updated>2016-09-06T04:12:41.600Z</updated>
   <id>http://yoursite.com//</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[访问控制]]></title>
+    <title><![CDATA[cissp读书笔记-访问控制]]></title>
     <link href="http://yoursite.com/2016/08/23/access-control/"/>
     <id>http://yoursite.com/2016/08/23/access-control/</id>
     <published>2016-08-23T12:14:33.000Z</published>
-    <updated>2016-09-05T08:45:28.630Z</updated>
+    <updated>2016-09-06T04:12:41.600Z</updated>
     <content type="html"><![CDATA[<p>知识提纲：<br>身份标识方法和技术<br>身份验证方法、模型和技术<br>自主访问控制、强制访问控制和非自主访问控制<br>可问责性、监控和审计实践<br>发射安全和技术<br>入侵检测系统<br>访问控制实践和技术中可能遇到的安全威胁</p>
 <p>访问控制是一种安全手段，控制用户和系统如何和其他系统和资源进行通信和交互。</p>
 <p>访问是在主体和客体之间进行的信息流动。主体是一个主动的实体，它请求对客体或客体的数据进行访问。</p>
@@ -30,6 +30,7 @@
 <p>一般来说，有3种因素能够用于身份验证：<br>1.“某人知道的内容（根据知识进行身份验证）”：密码、PIN、预留问题（母亲姓氏）<br>2.“某人所拥有的物品（根据所有权进行身份有验证）”：钥匙、门卡、访问卡、证件、票据<br>3.“某人的身份（根据特征进行身份验证）”：生物特征、物理特征</p>
 <p>强身份验证包括3种身份验证方式中的两种，创建或者发布安全身份应当包含3个关键点：唯一性、非描述性和签发。</p>
 <p>唯一性：每个用户必须具有有用于问责的唯一ID<br>非描述性：任何凭证都应当不表明账户的目的<br>签发：这些元素由另一个权威机构提供，用于证明身份</p>
+<p>密码管理方法</p>
 <p>未完待续</p>
 ]]></content>
     <summary type="html">
@@ -44,11 +45,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[信息安全与风险管理-读书笔记]]></title>
+    <title><![CDATA[cissp读书笔记-信息安全与风险管理]]></title>
     <link href="http://yoursite.com/2016/08/23/sec-management/"/>
     <id>http://yoursite.com/2016/08/23/sec-management/</id>
     <published>2016-08-23T12:14:05.000Z</published>
-    <updated>2016-08-24T08:54:36.812Z</updated>
+    <updated>2016-09-06T04:04:25.584Z</updated>
     <content type="html"><![CDATA[<p>知识提纲：</p>
 <blockquote>
 <p>安全管理职责<br>行政管理性、技术性和物理性控制之间的差异<br>3个主要的安全原则：机密性、完整性、可用性（CIA）<br>风险管理和风险分析<br>安全策略<br>信息分类<br>安全意识培训</p>
@@ -801,7 +802,7 @@
     <link href="http://yoursite.com/2015/08/19/security-test/"/>
     <id>http://yoursite.com/2015/08/19/security-test/</id>
     <published>2015-08-19T10:58:26.000Z</published>
-    <updated>2016-08-24T01:35:53.577Z</updated>
+    <updated>2016-09-09T01:34:49.410Z</updated>
     <content type="html"><![CDATA[<p>笔者曾从事网络安全风险评估工作，很早就想写这个话题了，但觉得写得太细的话，写不完，那暂且就先“浅谈”。</p>
 <p>PS：仅从个人认识角度来谈，如有雷同，就对了。</p>
 <h2 id="什么是网络安全风险评估">什么是网络安全风险评估</h2><p>风险评估(Risk Assessment)的目的是：</p>
@@ -849,9 +850,10 @@
 <p>虽说威胁分析套路很多，只要识别出威胁就可以，但业界也有一些比较成熟的建模，比如X.805分层分析、攻击树模型、微软的STRIDE威胁建模等。这里就不再详述，请自行google。</p>
 <p>这里给个STRIDE作为例子：</p>
 <p><img src="/img/security_pg/threat_analysis.png" alt="threat_analysis"></p>
-<p>分析完威胁，就要根据这些威胁点来进行安全测试。</p>
+<p>威胁分析的输出件是风险矩阵和对应的安全需求列表、安全测试需求列表</p>
+<p>分析完威胁，就要根据这些威胁点、安全需求列表和安全测试需求列表，来进行安全测试。</p>
 <p>这里就有很多领域，比如web安全(前端+后端)、Android/IOS安全、云安全等等</p>
-<p>(未完待续)</p>
+<h2 id="安全测试">安全测试</h2><p>(未完待续)</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>笔者曾从事网络安全风险评估工作，很早就想写这个话题了，但觉得写得太细的话，写不完，那暂且就先“浅谈”。</p>
