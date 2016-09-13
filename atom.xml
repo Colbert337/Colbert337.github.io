@@ -5,7 +5,7 @@
   <subtitle><![CDATA[扣吧的移动城堡]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com//"/>
-  <updated>2016-09-13T10:07:01.049Z</updated>
+  <updated>2016-09-13T10:08:17.078Z</updated>
   <id>http://yoursite.com//</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/08/23/access-control/"/>
     <id>http://yoursite.com/2016/08/23/access-control/</id>
     <published>2016-08-23T12:14:33.000Z</published>
-    <updated>2016-09-13T10:07:01.049Z</updated>
+    <updated>2016-09-13T10:08:17.078Z</updated>
     <content type="html"><![CDATA[<p>知识提纲：<br>身份标识方法和技术<br>身份验证方法、模型和技术<br>自主访问控制、强制访问控制和非自主访问控制<br>可问责性、监控和审计实践<br>发射安全和技术<br>入侵检测系统<br>访问控制实践和技术中可能遇到的安全威胁</p>
 <p>访问控制是一种安全手段，控制用户和系统如何和其他系统和资源进行通信和交互。</p>
 <p>访问是在主体和客体之间进行的信息流动。主体是一个主动的实体，它请求对客体或客体的数据进行访问。</p>
@@ -41,7 +41,11 @@
 </blockquote>
 <p>授权</p>
 <blockquote>
-<p>访问准则(角色、组、位置、时间、事务处理类型)<br>默认为拒绝访问<br>知其所需(最小特权原则)：个人应当只被允许访问为履行其职责所需要的信息<br>单点登录<br>Kerberos<br>SESAME<br>安全域<br>目录服务<br>瘦客户端</p>
+<p>访问准则(角色、组、位置、时间、事务处理类型)<br>默认为拒绝访问<br>知其所需(最小特权原则)：个人应当只被允许访问为履行其职责所需要的信息<br>单点登录</p>
+</blockquote>
+<p>单点登录技术：</p>
+<blockquote>
+<p>Kerberos<br>SESAME<br>安全域<br>目录服务<br>瘦客户端</p>
 </blockquote>
 <p>未完待续</p>
 ]]></content>
