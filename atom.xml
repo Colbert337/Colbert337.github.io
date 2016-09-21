@@ -5,7 +5,7 @@
   <subtitle><![CDATA[扣吧的移动城堡]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com//"/>
-  <updated>2016-09-13T10:33:21.734Z</updated>
+  <updated>2016-09-21T02:34:19.124Z</updated>
   <id>http://yoursite.com//</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[cissp读书笔记-访问控制]]></title>
+    <title><![CDATA[cissp读书笔记-访问控制(AIO5)]]></title>
     <link href="http://yoursite.com/2016/08/23/access-control/"/>
     <id>http://yoursite.com/2016/08/23/access-control/</id>
     <published>2016-08-23T12:14:33.000Z</published>
-    <updated>2016-09-13T10:33:21.734Z</updated>
+    <updated>2016-09-21T02:34:19.124Z</updated>
     <content type="html"><![CDATA[<p>知识提纲：<br>身份标识方法和技术<br>身份验证方法、模型和技术<br>自主访问控制、强制访问控制和非自主访问控制<br>可问责性、监控和审计实践<br>发射安全和技术<br>入侵检测系统<br>访问控制实践和技术中可能遇到的安全威胁</p>
 <p>访问控制是一种安全手段，控制用户和系统如何和其他系统和资源进行通信和交互。</p>
 <p>访问是在主体和客体之间进行的信息流动。主体是一个主动的实体，它请求对客体或客体的数据进行访问。</p>
@@ -46,7 +46,11 @@
 <blockquote>
 <p>Kerberos<br>SESAME<br>安全域<br>目录服务<br>瘦客户端</p>
 </blockquote>
-<p>未完待续</p>
+<p>访问控制模型：</p>
+<blockquote>
+<p>自主访问控制<br>强制访问控制<br>角色型访问控制</p>
+</blockquote>
+<p>可问责性：审计功能能确保用户的动作可问责，验证安全策略已实施，并且能够用作调查工具。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>知识提纲：<br>身份标识方法和技术<br>身份验证方法、模型和技术<br>自主访问控制、强制访问控制和非自主访问控制<br>可问责性、监控和审计实践<br>发射安全和技术<br>入侵检测系统<br>访问控制实践和技术中可能遇到的安全威胁</p>
@@ -60,11 +64,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[cissp读书笔记-信息安全与风险管理]]></title>
+    <title><![CDATA[cissp读书笔记-信息安全与风险管理(AIO6)]]></title>
     <link href="http://yoursite.com/2016/08/23/sec-management/"/>
     <id>http://yoursite.com/2016/08/23/sec-management/</id>
     <published>2016-08-23T12:14:05.000Z</published>
-    <updated>2016-09-06T04:04:25.584Z</updated>
+    <updated>2016-09-21T02:35:35.310Z</updated>
     <content type="html"><![CDATA[<p>知识提纲：</p>
 <blockquote>
 <p>安全管理职责<br>行政管理性、技术性和物理性控制之间的差异<br>3个主要的安全原则：机密性、完整性、可用性（CIA）<br>风险管理和风险分析<br>安全策略<br>信息分类<br>安全意识培训</p>
