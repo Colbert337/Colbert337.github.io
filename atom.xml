@@ -5,7 +5,7 @@
   <subtitle><![CDATA[扣吧的移动城堡]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com//"/>
-  <updated>2016-09-21T02:34:19.124Z</updated>
+  <updated>2016-09-22T02:32:14.264Z</updated>
   <id>http://yoursite.com//</id>
   
   <author>
@@ -16,11 +16,61 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[cissp cbk1:security & risk management]]></title>
+    <link href="http://yoursite.com/2016/09/22/cbk1/"/>
+    <id>http://yoursite.com/2016/09/22/cbk1/</id>
+    <published>2016-09-22T01:27:45.000Z</published>
+    <updated>2016-09-22T02:32:14.264Z</updated>
+    <content type="html"><![CDATA[<p>CISSP的“安全和风险管理”领域，指明了一系列的框架、策略、概念、原理、结构和标准，用于建立信息资产保护准则和评估保护的有效性，同时也包括了治理问题、组织行为和安全意识。</p>
+<p>信息安全管理，建立了一个全面和主动的安全方案的基础，以确保一个组织的信息资产的保护。当今高度关联、相互依存的环境，要求我们必须了解信息技术和业务目标之间的联系。信息安全管理沟通了组织可接收的风险，由于当前实施的有效并持续作用的安全控制，来减少公司信息资产的风险。</p>
+<p>安全管理包括对信息资产的机密性、完整性和可用性的必要保护的管理、技术和物理控制。控制是通过政策、过程、标准、基线的基础来表现的。</p>
+<p>信息安全管理实践了风险管理，包括风险评估、风险分析、数据分类和安全意识等工具。信息资产进行分类，通过风险评估，资产相关的威胁和漏洞会被分类，用于减缓风险的适当的保障措施可以被安全专家识别和优先选用。</p>
+<p>风险管理减少了信息资产的损失，通过识别、度量和控制不良事件。它包含了全面安全审查，风险分析，安全策略的选择和评估，成本效益分析，管理决策，安全策略识别和实施，以及正在进行的效益审查。</p>
+<p>…</p>
+<p>主题</p>
+<blockquote>
+<p>机密性、完整性、可用性的概念<br>安全治理原则<br>合规性<br>法律和监管<br>文件化的安全策略、标识、流程和指南<br>业务连续性要求<br>人员安全策略<br>风险管理理念<br>威胁建模<br>整合安全风险因素到采购策略和实践中<br>安全教育，培训和意识</p>
+</blockquote>
+<p>CIA</p>
+<blockquote>
+<p>机密性<br>完整性<br>可用性</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>CISSP的“安全和风险管理”领域，指明了一系列的框架、策略、概念、原理、结构和标准，用于建立信息资产保护准则和评估保护的有效性，同时也包括了治理问题、组织行为和安全意识。</p>
+<p>信息安全管理，建立了一个全面和主动的安全方案的基础，以确保一个组织的信息资产的保护。当]]>
+    </summary>
+    
+      <category term="cissp" scheme="http://yoursite.com/tags/cissp/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[做了一个重要的决定]]></title>
+    <link href="http://yoursite.com/2016/09/21/decision/"/>
+    <id>http://yoursite.com/2016/09/21/decision/</id>
+    <published>2016-09-21T05:08:30.000Z</published>
+    <updated>2016-09-22T01:26:10.484Z</updated>
+    <content type="html"><![CDATA[<p>手上一本《CISSO认证考试指南(第5版)》的知识体系跟新的考试大纲相比，已经有点过时了。<br>最新的考试大纲是《Official (ISC)2 Guide to the CISSP CBK》，全英文，卖1000块，好贵= =<br>看英文比较慢，准备慢慢把这本书中的重点翻译成中文，看看能不能坚持下来。<br>嗯，就这样。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>手上一本《CISSO认证考试指南(第5版)》的知识体系跟新的考试大纲相比，已经有点过时了。<br>最新的考试大纲是《Official (ISC)2 Guide to the CISSP CBK》，全英文，卖1000块，好贵= =<br>看英文比较慢，准备慢慢把这本书中的重点]]>
+    </summary>
+    
+      <category term="cissp" scheme="http://yoursite.com/tags/cissp/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[cissp读书笔记-访问控制(AIO5)]]></title>
     <link href="http://yoursite.com/2016/08/23/access-control/"/>
     <id>http://yoursite.com/2016/08/23/access-control/</id>
     <published>2016-08-23T12:14:33.000Z</published>
-    <updated>2016-09-21T02:34:19.124Z</updated>
+    <updated>2016-09-22T01:15:11.608Z</updated>
     <content type="html"><![CDATA[<p>知识提纲：<br>身份标识方法和技术<br>身份验证方法、模型和技术<br>自主访问控制、强制访问控制和非自主访问控制<br>可问责性、监控和审计实践<br>发射安全和技术<br>入侵检测系统<br>访问控制实践和技术中可能遇到的安全威胁</p>
 <p>访问控制是一种安全手段，控制用户和系统如何和其他系统和资源进行通信和交互。</p>
 <p>访问是在主体和客体之间进行的信息流动。主体是一个主动的实体，它请求对客体或客体的数据进行访问。</p>
@@ -1034,51 +1084,6 @@
     </summary>
     
       <category term="Android安全" scheme="http://yoursite.com/tags/Android%E5%AE%89%E5%85%A8/"/>
-    
-      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[菜鸟如何学习Android安全]]></title>
-    <link href="http://yoursite.com/2015/08/10/android-1/"/>
-    <id>http://yoursite.com/2015/08/10/android-1/</id>
-    <published>2015-08-10T14:16:23.000Z</published>
-    <updated>2015-08-14T16:06:58.000Z</updated>
-    <content type="html"><![CDATA[<p>扣吧力作，欢迎转载，转载请注明来自colbert337.github.io</p>
-<p>Android安全是一个很大的课题，也是非常热门的话题。Android的开源和碎片化两个因素，决定了Android安全在攻防两端都大有可为，面对高度定制化的海量Android平台产品，漏洞往往层出不穷。</p>
-<p>笔者觉得菜鸟（初学者）可以按照以下顺序去学习Android安全（默认菜鸟已经有网络安全基础，如安全评估方法论、密码学等）：<br>一、先学Android基础和Android开发<br>1）Android系统学习<br>2）Android开发环境搭建<br>3）Android应用开发（JAVA）<br>4）Android NDK开发（C/C++）</p>
-<p>二、再学Android应用层安全<br>1）Android应用安全<br>2）Android数据安全</p>
-<p>三、再学Android系统层安全<br>1）Android系统层安全(Framework)<br>2) Android系统层安全（Native）<br>3）Android系统层安全(kernal)</p>
-<p>以上内容学习的同时，还可以根据兴趣选择性的以下几个方面加强（不分顺序）：<br>1) Android应用逆向<br>2）ARM/MIPS反汇编<br>3）应用服务端安全（web安全）<br>4）Android/Linux驱动开发<br>5）Android系统源码编译<br>6）Android root技术<br>7) CP侧（Moderm）安全<br>8) 启动和升级（fastboot）安全</p>
-<p>此外，为了提高攻防技术，还可以在以下几个方面去努力：<br>1）漏洞挖掘用例化<br>2）分析业界漏洞，总结出漏洞库<br>3）分析业界POC，总结出攻击模式库<br>4）在漏洞挖掘的过程，尝试总结某种类型漏洞的特点，输出自动化漏洞挖掘工具<br>5）在漏洞利用的过程，尝试总结某种利用方式的特点，输出自动化漏洞利用工具</p>
-<p>最后，有条件的多参会跟业界大牛接触，没条件的多读Android源码，多折腾设备，很快就可以从菜鸟成为大牛。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>扣吧力作，欢迎转载，转载请注明来自colbert337.github.io</p>
-<p>Android安全是一个很大的课题，也是非常热门的话题。Android的开源和碎片化两个因素，决定了Android安全在攻防两端都大有可为，面对高度定制化的海量Android平台产品，]]>
-    </summary>
-    
-      <category term="Android安全" scheme="http://yoursite.com/tags/Android%E5%AE%89%E5%85%A8/"/>
-    
-      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[关于扣吧的移动城堡]]></title>
-    <link href="http://yoursite.com/2015/08/09/my-new-post/"/>
-    <id>http://yoursite.com/2015/08/09/my-new-post/</id>
-    <published>2015-08-09T12:58:52.000Z</published>
-    <updated>2015-08-09T13:45:16.000Z</updated>
-    <content type="html"><![CDATA[<p>大家好，我叫扣吧</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>大家好，我叫扣吧</p>
-]]>
-    </summary>
-    
-      <category term="test" scheme="http://yoursite.com/tags/test/"/>
     
       <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
     
