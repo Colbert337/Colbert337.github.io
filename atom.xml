@@ -5,7 +5,7 @@
   <subtitle><![CDATA[扣吧的移动城堡]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com//"/>
-  <updated>2016-09-22T02:32:14.264Z</updated>
+  <updated>2016-09-22T02:38:32.006Z</updated>
   <id>http://yoursite.com//</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/09/22/cbk1/"/>
     <id>http://yoursite.com/2016/09/22/cbk1/</id>
     <published>2016-09-22T01:27:45.000Z</published>
-    <updated>2016-09-22T02:32:14.264Z</updated>
+    <updated>2016-09-22T02:38:32.006Z</updated>
     <content type="html"><![CDATA[<p>CISSP的“安全和风险管理”领域，指明了一系列的框架、策略、概念、原理、结构和标准，用于建立信息资产保护准则和评估保护的有效性，同时也包括了治理问题、组织行为和安全意识。</p>
 <p>信息安全管理，建立了一个全面和主动的安全方案的基础，以确保一个组织的信息资产的保护。当今高度关联、相互依存的环境，要求我们必须了解信息技术和业务目标之间的联系。信息安全管理沟通了组织可接收的风险，由于当前实施的有效并持续作用的安全控制，来减少公司信息资产的风险。</p>
 <p>安全管理包括对信息资产的机密性、完整性和可用性的必要保护的管理、技术和物理控制。控制是通过政策、过程、标准、基线的基础来表现的。</p>
@@ -48,11 +48,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[做了一个重要的决定]]></title>
+    <title><![CDATA[翻译事宜]]></title>
     <link href="http://yoursite.com/2016/09/21/decision/"/>
     <id>http://yoursite.com/2016/09/21/decision/</id>
     <published>2016-09-21T05:08:30.000Z</published>
-    <updated>2016-09-22T01:26:10.484Z</updated>
+    <updated>2016-09-22T02:39:41.763Z</updated>
     <content type="html"><![CDATA[<p>手上一本《CISSO认证考试指南(第5版)》的知识体系跟新的考试大纲相比，已经有点过时了。<br>最新的考试大纲是《Official (ISC)2 Guide to the CISSP CBK》，全英文，卖1000块，好贵= =<br>看英文比较慢，准备慢慢把这本书中的重点翻译成中文，看看能不能坚持下来。<br>嗯，就这样。</p>
 ]]></content>
     <summary type="html">
