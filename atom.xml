@@ -5,7 +5,7 @@
   <subtitle><![CDATA[扣吧的移动城堡]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com//"/>
-  <updated>2016-09-22T02:38:32.006Z</updated>
+  <updated>2016-09-27T05:29:22.157Z</updated>
   <id>http://yoursite.com//</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[扣吧的移动城堡推出公众号，关注有奖]]></title>
+    <link href="http://yoursite.com/2016/09/27/top/"/>
+    <id>http://yoursite.com/2016/09/27/top/</id>
+    <published>2016-09-27T05:22:37.000Z</published>
+    <updated>2016-09-27T05:29:22.157Z</updated>
+    <content type="html"><![CDATA[<p>扣吧的移动城堡终于有公众号了，以后可以跟大家微信交流了:)</p>
+<p>之前很多朋友让我留个联系方式，于是我就申请了一个微信公众号，以后大家可以直接在公众号跟我聊天了。</p>
+<p>后续优先更新公众号，这里也不再维护了，希望有更多的干货给到大家。</p>
+<p>来来来，拿起微信扫一扫，关注&lt;扣吧&gt;，我们来做朋友吧！</p>
+<p><img src="/img/coba.png" alt="risk"></p>
+<p>关注有奖！搞起！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>扣吧的移动城堡终于有公众号了，以后可以跟大家微信交流了:)</p>
+<p>之前很多朋友让我留个联系方式，于是我就申请了一个微信公众号，以后大家可以直接在公众号跟我聊天了。</p>
+<p>后续优先更新公众号，这里也不再维护了，希望有更多的干货给到大家。</p>
+<p>来来来，]]>
+    </summary>
+    
+      <category term="公众号" scheme="http://yoursite.com/tags/%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[cissp cbk1:security & risk management]]></title>
@@ -1057,30 +1083,6 @@
     <summary type="html">
     <![CDATA[<p>扣吧力作，欢迎转载，转载请注明来自colbert337.github.io</p>
 <h2 id="StageFright漏洞有多犀利">StageFright漏洞有多犀利</h2><p><img src="/img/yitiaocaixin.png" alt="yitia]]>
-    </summary>
-    
-      <category term="Android安全" scheme="http://yoursite.com/tags/Android%E5%AE%89%E5%85%A8/"/>
-    
-      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[一种常用的Android NDK对抗so动态调试方法]]></title>
-    <link href="http://yoursite.com/2015/08/11/antidebug/"/>
-    <id>http://yoursite.com/2015/08/11/antidebug/</id>
-    <published>2015-08-11T15:40:19.000Z</published>
-    <updated>2015-08-14T16:06:54.000Z</updated>
-    <content type="html"><![CDATA[<p>扣吧力作，欢迎转载，转载请注明来自colbert337.github.io</p>
-<p>在Linux中，进程的状态可以通过/proc/PID/status来查看，其中TracerPid字段的取值，指示了跟踪当前进程的进程ID，如果是0，表示没有跟踪。</p>
-<p>攻击者动态调试so，需要使用gdb或者IDA的android_server（底层是trace一类的函数）来attach目标进程，此时/proc/PID/status中的TracerPid不为0。利用这个特性，我们就可以在so中预置检测TracerPid的函数，来判断当前进程有没有被跟踪调试，如何发现被调试就退出或者自毁。下面展示一个demo：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//anti-debug，对抗动态调试</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">is_traced</span><span class="params">()</span></span>&#123;</span><br><span class="line">    FILE *fp = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">int</span> flag = <span class="number">1</span>;<span class="comment">//flag=1表示被调试</span></span><br><span class="line">    <span class="keyword">char</span> buf[<span class="number">100</span>], *ptr;</span><br><span class="line">    <span class="keyword">int</span> ppid;</span><br><span class="line">    <span class="built_in">memset</span>(buf, <span class="number">0</span>, <span class="keyword">sizeof</span>(buf));</span><br><span class="line">    <span class="built_in">sprintf</span>(buf, <span class="string">"/proc/%d/status"</span>, getpid());</span><br><span class="line">    fp = fopen(buf, <span class="string">"r"</span>);</span><br><span class="line">    <span class="keyword">if</span>(fp == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    <span class="keyword">while</span>(fgets(buf, <span class="keyword">sizeof</span>(buf)-<span class="number">1</span>, fp))&#123;</span><br><span class="line">        <span class="keyword">if</span>(ptr = <span class="built_in">strstr</span>(buf, <span class="string">"TracerPid:"</span>))&#123;</span><br><span class="line">            <span class="built_in">sscanf</span>(ptr + <span class="built_in">strlen</span>(<span class="string">"TracerPid:"</span>), <span class="string">"%d"</span>, &amp;ppid);</span><br><span class="line">            <span class="comment">//sscanf() - 从一个字符串中读进与指定格式相符的数据。</span></span><br><span class="line">            <span class="keyword">if</span>(!ppid)<span class="comment">//若ppid为0，则表示没有被调试，flag=0</span></span><br><span class="line">                flag = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fp);</span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们在关键的函数执行前，可以进行以下判断：</p>
-<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//anti-debug</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">is</span><span class="number">_</span>traced()) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure>]]></content>
-    <summary type="html">
-    <![CDATA[<p>扣吧力作，欢迎转载，转载请注明来自colbert337.github.io</p>
-<p>在Linux中，进程的状态可以通过/proc/PID/status来查看，其中TracerPid字段的取值，指示了跟踪当前进程的进程ID，如果是0，表示没有跟踪。</p>
-<p>攻击者]]>
     </summary>
     
       <category term="Android安全" scheme="http://yoursite.com/tags/Android%E5%AE%89%E5%85%A8/"/>
